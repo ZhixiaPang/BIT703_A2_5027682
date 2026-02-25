@@ -1,0 +1,50 @@
+/* Nav links */
+.nav-link {
+  color: #333 !important;
+  font-size: 0.95rem;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-link:hover {
+  color: #000 !important;
+}
+
+/* Search input group - remove double border */
+.input-group-text {
+  border-right: none;
+}
+
+.input-group .form-control {
+  border-left: none;
+  box-shadow: none;
+}
+
+.input-group .form-control:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+/* About section */
+.about-section {
+  background-color: #fff;
+}
+
+/* Footer links */
+.footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+.footer-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Footer headings */
+footer h6 {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
