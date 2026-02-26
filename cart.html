@@ -17,24 +17,106 @@
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-    <!-- placeholder for navbar -->
-    <div id="navbar-placeholder"></div>
-    <!-- Footer placeholder -->
-    <div id="footer-placeholder"></div>
-    <script>
-      fetch("header-other.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar-placeholder").innerHTML = data;
-        });
-    </script>
-    <script>
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-placeholder").innerHTML = data;
-        });
-    </script>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+  <div class="container">
+    
+    <!-- Logo -->
+    <a class="navbar-brand me-2" href="home.html">
+      <img src="images/logo.png" alt="Logo" height="40" />
+    </a>
+
+
+    <!-- Navbar links - pushed to center-right -->
+    <div class="d-flex align-items-center">
+      <a class="nav-link px-3" href="home.html">Home</a>
+      <span class="text-muted">|</span>
+      <a class="nav-link px-3" href="about.html">About</a>
+      <span class="text-muted">|</span>
+      <a class="nav-link px-3" href="shop.html">Shop</a>
+      <span class="text-muted">|</span>
+      <a class="nav-link px-3" href="help.html">Help</a>
+      <a class="btn btn-dark ms-3" href="cart.html">🛒 Your Cart</a>
+    </div>
+
+  </div>
+</nav>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- Logo + Address -->
+          <div class="col-12 col-md-3 mb-4">
+            <img src="images/logo.png" alt="Logo" height="50" class="mb-3" />
+            <p class="small text-white-50">
+              1717 Harrison St, San Francisco,<br />
+              CA 94103, USA
+            </p>
+          </div>
+
+          <!-- Main Menu -->
+          <div class="col-6 col-md-2 mb-4">
+            <h6 class="text-uppercase fw-bold mb-3">Main Menu</h6>
+            <ul class="list-unstyled">
+              <li><a href="home.html" class="footer-link">Home</a></li>
+              <li><a href="about.html" class="footer-link">About</a></li>
+              <li><a href="shop.html" class="footer-link">Shop</a></li>
+              <li><a href="#" class="footer-link">Help</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div class="col-6 col-md-2 mb-4">
+            <h6 class="text-uppercase fw-bold mb-3">Company</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">The Company</a></li>
+              <li><a href="#" class="footer-link">Careers</a></li>
+              <li><a href="#" class="footer-link">Press</a></li>
+            </ul>
+          </div>
+
+          <!-- Discover -->
+          <div class="col-6 col-md-2 mb-4">
+            <h6 class="text-uppercase fw-bold mb-3">Discover</h6>
+            <ul class="list-unstyled">
+              <li><a href="#" class="footer-link">The Team</a></li>
+              <li><a href="#" class="footer-link">Our History</a></li>
+              <li><a href="#" class="footer-link">Brand Motto</a></li>
+            </ul>
+          </div>
+
+          <!-- Find Us On -->
+          <div class="col-6 col-md-3 mb-4">
+            <h6 class="text-uppercase fw-bold mb-3">Find Us On</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="footer-link">
+                  <i class="bi bi-facebook me-2"></i>Facebook
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">
+                  <i class="bi bi-twitter me-2"></i>Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">
+                  <i class="bi bi-instagram me-2"></i>Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom copyright line -->
+        <hr class="border-secondary" />
+        <div class="d-flex align-items-center">
+          <i class="bi bi-globe me-2"></i>
+          <span class="small text-white-50"
+            >© Aotearoa Adventure Gear. All rights reserved.</span
+          >
+        </div>
+      </div>
+    </footer>
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
