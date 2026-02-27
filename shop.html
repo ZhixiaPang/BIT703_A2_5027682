@@ -2,58 +2,318 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Aotearoa Adventure Gear</title>
+    <title>Shop - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-  <div class="container">
-    
-    <!-- Logo -->
-    <a class="navbar-brand me-2" href="home.html">
-      <img src="images/logo.png" alt="Logo" height="40" />
-    </a>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+      <div class="container">
+        <a class="navbar-brand me-2" href="home.html">
+          <img src="images/logo.png" alt="Logo" height="100" />
+        </a>
+        <form class="d-flex" style="width: 220px; margin-right: 150px;">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="bi bi-search"></i>
+            </span>
+            <input class="form-control border-start-0 ps-0" type="search" placeholder="Search..." aria-label="Search" />
+          </div>
+        </form>
+        <div class="d-flex align-items-center">
+          <a class="nav-link px-3" href="home.html">Home</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3" href="#">About</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3 active" href="shop.html">Shop</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3" href="#">Help</a>
+          <a class="btn btn-dark ms-3" href="cart.html">🛒 Your Cart</a>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Navbar links - pushed to center-right -->
-    <div class="d-flex align-items-center">
-      <a class="nav-link px-3" href="home.html">Home</a>
-      <span class="text-muted">|</span>
-      <a class="nav-link px-3" href="about.html">About</a>
-      <span class="text-muted">|</span>
-      <a class="nav-link px-3" href="shop.html">Shop</a>
-      <span class="text-muted">|</span>
-      <a class="nav-link px-3" href="help.html">Help</a>
-      <a class="btn btn-dark ms-3" href="cart.html">🛒 Your Cart</a>
-    </div>
+    <!-- Hero Section -->
+    <section class="shop-hero text-center py-5">
+      <div class="container">
+        <h1 class="hero-tagline mb-3">Your Ultimate New Zealand Adventure Starts Here</h1>
+        <hr class="hero-divider mx-auto mb-4">
+        <form class="d-flex justify-content-center gap-2" id="shopSearchForm">
+          <div class="input-group" style="max-width: 500px;">
+            <span class="input-group-text bg-white">
+              <i class="bi bi-search"></i>
+            </span>
+            <input type="search" class="form-control" id="shopSearch" placeholder="Search..." />
+          </div>
+          <button class="btn btn-dark px-4" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
 
-  </div>
-</nav>
+    <hr class="m-0">
+
+    <!-- Featured Categories -->
+    <section class="categories-section py-5">
+      <div class="container">
+        <h2 class="text-center mb-2">Featured Categories</h2>
+        <p class="text-center text-muted mb-4">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+          accusantium doloremque laudantium
+        </p>
+        <div class="row justify-content-center">
+
+          <!-- Category 1 - Backpacks -->
+          <div class="col-6 col-md-3 mb-4 text-center">
+            <a href="shop.html" class="text-decoration-none text-dark">
+              <div class="category-card">
+                <img src="images/backpack1.jpg" alt="Backpacks" class="img-fluid category-img">
+              </div>
+              <p class="category-name mt-2">BACKPACKS</p>
+            </a>
+          </div>
+
+          <!-- Category 2 - Tents -->
+          <div class="col-6 col-md-3 mb-4 text-center">
+            <a href="shop.html" class="text-decoration-none text-dark">
+              <div class="category-card">
+                <img src="images/tent1.jpg" alt="Tents" class="img-fluid category-img">
+              </div>
+              <p class="category-name mt-2">TENTS</p>
+            </a>
+          </div>
+
+          <!-- Category 3 - Boots -->
+          <div class="col-6 col-md-3 mb-4 text-center">
+            <a href="shop.html" class="text-decoration-none text-dark">
+              <div class="category-card">
+                <img src="images/hikingboot1.jpg" alt="Boots" class="img-fluid category-img">
+              </div>
+              <p class="category-name mt-2">BOOTS</p>
+            </a>
+          </div>
+
+          <!-- Shop Now Button -->
+          <div class="col-6 col-md-3 mb-4 text-center">
+            <a href="shop.html" class="text-decoration-none">
+              <div class="shop-now-card d-flex align-items-center justify-content-center">
+                <span class="text-white fs-5">Shop Now</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- Left image -->
+          <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
+            <img src="images/backpack2.jpg" alt="Newsletter" class="img-fluid newsletter-img">
+          </div>
+
+          <!-- Right newsletter form -->
+          <div class="col-12 col-md-8">
+            <h3 class="newsletter-title mb-3">Newsletter</h3>
+            <form class="d-flex gap-2" id="shopNewsletterForm">
+              <input
+                type="email"
+                class="form-control"
+                id="shopNewsletterEmail"
+                placeholder="Email Address"
+                required
+              >
+              <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <!-- Product Listing Section -->
+    <section class="product-listing-section py-5">
+      <div class="container">
+        <div class="row">
+
+          <!-- Left - Header and description -->
+          <div class="col-12 col-md-3 mb-4">
+            <h2 class="listing-header">Header Regarding Your Product</h2>
+            <p class="text-muted small">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque
+              ipsa quae ab illo.
+            </p>
+            <a href="#" class="btn btn-dark">Browse All</a>
+          </div>
+
+          <!-- Right - Product Grid -->
+          <div class="col-12 col-md-9">
+            <div class="row">
+
+              <!-- Product 1 -->
+              <div class="col-6 col-md-6 mb-4">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="images/backpack1.jpg" class="card-img-top shop-product-img" alt="Alpine Backpack">
+                    <div class="card-body">
+                      <p class="product-name">ALPINE BACKPACK</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$120</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="col-6 col-md-6 mb-4">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="images/tent1.jpg" class="card-img-top shop-product-img" alt="Explorer Tent">
+                    <div class="card-body">
+                      <p class="product-name">EXPLORER TENT</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$300</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="col-6 col-md-6 mb-4">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="images/hikingboot1.jpg" class="card-img-top shop-product-img" alt="Trail Boots">
+                    <div class="card-body">
+                      <p class="product-name">TRAIL BOOTS</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$180</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Product 4 -->
+              <div class="col-6 col-md-6 mb-4">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="images/raincoat1.jpg" class="card-img-top shop-product-img" alt="Summit Rain Jacket">
+                    <div class="card-body">
+                      <p class="product-name">SUMMIT RAIN JACKET</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$150</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="col-6 col-md-6 mb-4">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="images/backpack2.jpg" class="card-img-top shop-product-img" alt="Alpine Backpack">
+                    <div class="card-body">
+                      <p class="product-name">ALPINE BACKPACK</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$120</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="col-6 col-md-6 mb-4">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="images/tent2.jpg" class="card-img-top shop-product-img" alt="Explorer Tent">
+                    <div class="card-body">
+                      <p class="product-name">EXPLORER TENT</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$300</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center py-5">
+      <div class="container">
+        <h2>About Your Shop</h2>
+        <p class="mx-auto" style="max-width: 500px;">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+          veritatis et quasi.
+        </p>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
     <!-- Footer -->
     <footer class="footer bg-dark text-white pt-5 pb-3">
       <div class="container">
         <div class="row">
-          <!-- Logo + Address -->
           <div class="col-12 col-md-3 mb-4">
-            <img src="images/logo.png" alt="Logo" height="50" class="mb-3" />
-            <p class="small text-white-50">
-              1717 Harrison St, San Francisco,<br />
-              CA 94103, USA
-            </p>
+            <img src="images/logo.png" alt="Logo" height="100" class="mb-3">
+            <p class="small text-white-50">1717 Harrison St, San Francisco,<br>CA 94103, USA</p>
           </div>
-
-          <!-- Main Menu -->
           <div class="col-6 col-md-2 mb-4">
             <h6 class="text-uppercase fw-bold mb-3">Main Menu</h6>
             <ul class="list-unstyled">
@@ -63,8 +323,6 @@
               <li><a href="#" class="footer-link">Help</a></li>
             </ul>
           </div>
-
-          <!-- Company -->
           <div class="col-6 col-md-2 mb-4">
             <h6 class="text-uppercase fw-bold mb-3">Company</h6>
             <ul class="list-unstyled">
@@ -73,8 +331,6 @@
               <li><a href="#" class="footer-link">Press</a></li>
             </ul>
           </div>
-
-          <!-- Discover -->
           <div class="col-6 col-md-2 mb-4">
             <h6 class="text-uppercase fw-bold mb-3">Discover</h6>
             <ul class="list-unstyled">
@@ -83,43 +339,27 @@
               <li><a href="#" class="footer-link">Brand Motto</a></li>
             </ul>
           </div>
-
-          <!-- Find Us On -->
           <div class="col-6 col-md-3 mb-4">
             <h6 class="text-uppercase fw-bold mb-3">Find Us On</h6>
             <ul class="list-unstyled">
-              <li>
-                <a href="#" class="footer-link">
-                  <i class="bi bi-facebook me-2"></i>Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#" class="footer-link">
-                  <i class="bi bi-twitter me-2"></i>Twitter
-                </a>
-              </li>
-              <li>
-                <a href="#" class="footer-link">
-                  <i class="bi bi-instagram me-2"></i>Instagram
-                </a>
-              </li>
+              <li><a href="#" class="footer-link"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
+              <li><a href="#" class="footer-link"><i class="bi bi-twitter me-2"></i>Twitter</a></li>
+              <li><a href="#" class="footer-link"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
             </ul>
           </div>
         </div>
-
-        <!-- Bottom copyright line -->
-        <hr class="border-secondary" />
+        <hr class="border-secondary">
         <div class="d-flex align-items-center">
           <i class="bi bi-globe me-2"></i>
-          <span class="small text-white-50"
-            >© Aotearoa Adventure Gear. All rights reserved.</span
-          >
+          <span class="small text-white-50">© Aotearoa Adventure Gear. All rights reserved.</span>
         </div>
       </div>
     </footer>
+
     <!-- Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+
   </body>
 </html>
