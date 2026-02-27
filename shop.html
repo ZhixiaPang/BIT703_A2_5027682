@@ -5,26 +5,33 @@
     <title>Shop - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
       <div class="container">
         <a class="navbar-brand me-2" href="home.html">
           <img src="images/logo.png" alt="Logo" height="100" />
         </a>
-        <form class="d-flex" style="width: 220px; margin-right: 150px;">
+        <form class="d-flex" style="width: 220px; margin-right: 150px">
           <div class="input-group">
             <span class="input-group-text bg-white border-end-0">
               <i class="bi bi-search"></i>
             </span>
-            <input class="form-control border-start-0 ps-0" type="search" placeholder="Search..." aria-label="Search" />
+            <input
+              class="form-control border-start-0 ps-0"
+              type="search"
+              placeholder="Search..."
+              aria-label="Search"
+            />
           </div>
         </form>
         <div class="d-flex align-items-center">
@@ -43,21 +50,26 @@
     <!-- Hero Section -->
     <section class="shop-hero text-center py-5">
       <div class="container">
-        <h1 class="hero-tagline mb-3">Your Ultimate New Zealand Adventure Starts Here</h1>
-        <hr class="hero-divider mx-auto mb-4">
+        <h1 class="hero-tagline mb-3">
+          Your Ultimate New Zealand Adventure Starts Here
+        </h1>
+        <hr class="hero-divider mx-auto mb-4" />
         <form class="d-flex justify-content-center gap-2" id="shopSearchForm">
-          <div class="input-group" style="max-width: 500px;">
+          <div class="input-group" style="max-width: 500px">
             <span class="input-group-text bg-white">
               <i class="bi bi-search"></i>
             </span>
-            <input type="search" class="form-control" id="shopSearch" placeholder="Search..." />
+            <input
+              type="search"
+              class="form-control"
+              id="shopSearch"
+              placeholder="Search..."
+            />
           </div>
           <button class="btn btn-dark px-4" type="submit">Submit</button>
         </form>
       </div>
     </section>
-
-    <hr class="m-0">
 
     <!-- Featured Categories -->
     <section class="categories-section py-5">
@@ -68,60 +80,73 @@
           accusantium doloremque laudantium
         </p>
         <div class="row justify-content-center">
-
           <!-- Category 1 - Backpacks -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <a href="shop.html" class="text-decoration-none text-dark">
+            <a href="product.html" class="text-decoration-none text-dark">
               <div class="category-card">
-                <img src="images/backpack1.jpg" alt="Backpacks" class="img-fluid category-img">
+                <img
+                  src="images/cat-bp1.jpg"
+                  alt="Backpacks"
+                  class="img-fluid category-img"
+                />
               </div>
               <p class="category-name mt-2">BACKPACKS</p>
             </a>
           </div>
 
-          <!-- Category 2 - Tents -->
+          <!-- Category 2 - Sleeping Bags -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <a href="shop.html" class="text-decoration-none text-dark">
+            <a href="product.html" class="text-decoration-none text-dark">
               <div class="category-card">
-                <img src="images/tent1.jpg" alt="Tents" class="img-fluid category-img">
+                <img
+                  src="images/cat-s1.jpg"
+                  alt="Sleeping Bags"
+                  class="img-fluid category-img"
+                />
+              </div>
+              <p class="category-name mt-2">SLEEPING BAGS</p>
+            </a>
+          </div>
+
+          <!-- Category 3 - Tents -->
+          <div class="col-6 col-md-3 mb-4 text-center">
+            <a href="product.html" class="text-decoration-none text-dark">
+              <div class="category-card">
+                <img
+                  src="images/cat-t3.jpg"
+                  alt="Tents"
+                  class="img-fluid category-img"
+                />
               </div>
               <p class="category-name mt-2">TENTS</p>
             </a>
           </div>
 
-          <!-- Category 3 - Boots -->
-          <div class="col-6 col-md-3 mb-4 text-center">
-            <a href="shop.html" class="text-decoration-none text-dark">
-              <div class="category-card">
-                <img src="images/hikingboot1.jpg" alt="Boots" class="img-fluid category-img">
-              </div>
-              <p class="category-name mt-2">BOOTS</p>
-            </a>
-          </div>
-
           <!-- Shop Now Button -->
           <div class="col-6 col-md-3 mb-4 text-center">
-            <a href="shop.html" class="text-decoration-none">
-              <div class="shop-now-card d-flex align-items-center justify-content-center">
+            <a href="#" class="text-decoration-none">
+              <div
+                class="shop-now-card d-flex align-items-center justify-content-center"
+              >
                 <span class="text-white fs-5">Shop Now</span>
               </div>
             </a>
           </div>
-
         </div>
       </div>
     </section>
-
-    <hr class="m-0">
 
     <!-- Newsletter Section -->
     <section class="newsletter-section py-5">
       <div class="container">
         <div class="row align-items-center">
-
           <!-- Left image -->
           <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
-            <img src="images/backpack2.jpg" alt="Newsletter" class="img-fluid newsletter-img">
+            <img
+              src="images/s-nl.jpg"
+              alt="Newsletter"
+              class="img-fluid newsletter-img"
+            />
           </div>
 
           <!-- Right newsletter form -->
@@ -134,29 +159,27 @@
                 id="shopNewsletterEmail"
                 placeholder="Email Address"
                 required
-              >
-              <button class="btn btn-secondary px-4" type="submit">Subscribe</button>
+              />
+              <button class="btn btn-secondary px-4" type="submit">
+                Subscribe
+              </button>
             </form>
           </div>
-
         </div>
       </div>
     </section>
-
-    <hr class="m-0">
 
     <!-- Product Listing Section -->
     <section class="product-listing-section py-5">
       <div class="container">
         <div class="row">
-
           <!-- Left - Header and description -->
           <div class="col-12 col-md-3 mb-4">
             <h2 class="listing-header">Header Regarding Your Product</h2>
             <p class="text-muted small">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque
-              ipsa quae ab illo.
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo.
             </p>
             <a href="#" class="btn btn-dark">Browse All</a>
           </div>
@@ -164,12 +187,15 @@
           <!-- Right - Product Grid -->
           <div class="col-12 col-md-9">
             <div class="row">
-
-              <!-- Product 1 -->
-              <div class="col-6 col-md-6 mb-4">
+              <!-- Product 1 - Alpine Backpack -->
+              <div class="col-12 col-md-6 mb-3">
                 <a href="product.html" class="text-decoration-none">
-                  <div class="card product-card">
-                    <img src="images/backpack1.jpg" class="card-img-top shop-product-img" alt="Alpine Backpack">
+                  <div class="card product-card d-flex flex-row">
+                    <img
+                      src="images/cat-bp1.jpg"
+                      class="shop-product-img-horizontal"
+                      alt="Alpine Backpack"
+                    />
                     <div class="card-body">
                       <p class="product-name">ALPINE BACKPACK</p>
                       <div class="star-rating mb-1">
@@ -185,11 +211,15 @@
                 </a>
               </div>
 
-              <!-- Product 2 -->
-              <div class="col-6 col-md-6 mb-4">
+              <!-- Product 2 - Explorer Tent -->
+              <div class="col-12 col-md-6 mb-3">
                 <a href="product.html" class="text-decoration-none">
-                  <div class="card product-card">
-                    <img src="images/tent1.jpg" class="card-img-top shop-product-img" alt="Explorer Tent">
+                  <div class="card product-card d-flex flex-row">
+                    <img
+                      src="images/cat-t2.jpg"
+                      class="shop-product-img-horizontal"
+                      alt="Explorer Tent"
+                    />
                     <div class="card-body">
                       <p class="product-name">EXPLORER TENT</p>
                       <div class="star-rating mb-1">
@@ -205,33 +235,17 @@
                 </a>
               </div>
 
-              <!-- Product 3 -->
-              <div class="col-6 col-md-6 mb-4">
+              <!-- Product 3 - Summit Sleeping Bag -->
+              <div class="col-12 col-md-6 mb-3">
                 <a href="product.html" class="text-decoration-none">
-                  <div class="card product-card">
-                    <img src="images/hikingboot1.jpg" class="card-img-top shop-product-img" alt="Trail Boots">
+                  <div class="card product-card d-flex flex-row">
+                    <img
+                      src="images/cat-s1.jpg"
+                      class="shop-product-img-horizontal"
+                      alt="Summit Sleeping Bag"
+                    />
                     <div class="card-body">
-                      <p class="product-name">TRAIL BOOTS</p>
-                      <div class="star-rating mb-1">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star"></i>
-                        <i class="bi bi-star"></i>
-                      </div>
-                      <p class="product-price">$180</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <!-- Product 4 -->
-              <div class="col-6 col-md-6 mb-4">
-                <a href="product.html" class="text-decoration-none">
-                  <div class="card product-card">
-                    <img src="images/raincoat1.jpg" class="card-img-top shop-product-img" alt="Summit Rain Jacket">
-                    <div class="card-body">
-                      <p class="product-name">SUMMIT RAIN JACKET</p>
+                      <p class="product-name">SUMMIT SLEEPING BAG</p>
                       <div class="star-rating mb-1">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -245,13 +259,17 @@
                 </a>
               </div>
 
-              <!-- Product 5 -->
-              <div class="col-6 col-md-6 mb-4">
+              <!-- Product 4 - Summit Rain Jacket -->
+              <div class="col-12 col-md-6 mb-3">
                 <a href="product.html" class="text-decoration-none">
-                  <div class="card product-card">
-                    <img src="images/backpack2.jpg" class="card-img-top shop-product-img" alt="Alpine Backpack">
+                  <div class="card product-card d-flex flex-row">
+                    <img
+                      src="images/raincoat3.jpg"
+                      class="shop-product-img-horizontal"
+                      alt="Summit Rain Jacket"
+                    />
                     <div class="card-body">
-                      <p class="product-name">ALPINE BACKPACK</p>
+                      <p class="product-name">SUMMIT RAIN JACKET</p>
                       <div class="star-rating mb-1">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -259,17 +277,21 @@
                         <i class="bi bi-star"></i>
                         <i class="bi bi-star"></i>
                       </div>
-                      <p class="product-price">$120</p>
+                      <p class="product-price">$180</p>
                     </div>
                   </div>
                 </a>
               </div>
 
-              <!-- Product 6 -->
-              <div class="col-6 col-md-6 mb-4">
+              <!-- Product 5 - Explorer Tent -->
+              <div class="col-12 col-md-6 mb-3">
                 <a href="product.html" class="text-decoration-none">
-                  <div class="card product-card">
-                    <img src="images/tent2.jpg" class="card-img-top shop-product-img" alt="Explorer Tent">
+                  <div class="card product-card d-flex flex-row">
+                    <img
+                      src="images/cat-t1.jpg"
+                      class="shop-product-img-horizontal"
+                      alt="Explorer Tent"
+                    />
                     <div class="card-body">
                       <p class="product-name">EXPLORER TENT</p>
                       <div class="star-rating mb-1">
@@ -285,73 +307,58 @@
                 </a>
               </div>
 
+              <!-- Product 6 - Summit Sleeping Bag -->
+              <div class="col-12 col-md-6 mb-3">
+                <a href="product.html" class="text-decoration-none">
+                  <div class="card product-card d-flex flex-row">
+                    <img
+                      src="images/cat-s2.jpg"
+                      class="shop-product-img-horizontal"
+                      alt="Summit Sleeping Bag"
+                    />
+                    <div class="card-body">
+                      <p class="product-name">SUMMIT SLEEPING BAG</p>
+                      <div class="star-rating mb-1">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                      </div>
+                      <p class="product-price">$150</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section text-center py-5">
-      <div class="container">
-        <h2>About Your Shop</h2>
-        <p class="mx-auto" style="max-width: 500px;">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
-          veritatis et quasi.
-        </p>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
+    <!-- Floating Anchor - Back to Top -->
+    <a href="#" class="floating-anchor" id="backToTop" title="Back to Top">
+      <i class="bi bi-arrow-up"></i>
+    </a>
     <!-- Footer -->
-    <footer class="footer bg-dark text-white pt-5 pb-3">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-3 mb-4">
-            <img src="images/logo.png" alt="Logo" height="100" class="mb-3">
-            <p class="small text-white-50">1717 Harrison St, San Francisco,<br>CA 94103, USA</p>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <h6 class="text-uppercase fw-bold mb-3">Main Menu</h6>
-            <ul class="list-unstyled">
-              <li><a href="home.html" class="footer-link">Home</a></li>
-              <li><a href="about.html" class="footer-link">About</a></li>
-              <li><a href="shop.html" class="footer-link">Shop</a></li>
-              <li><a href="#" class="footer-link">Help</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <h6 class="text-uppercase fw-bold mb-3">Company</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="footer-link">The Company</a></li>
-              <li><a href="#" class="footer-link">Careers</a></li>
-              <li><a href="#" class="footer-link">Press</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-2 mb-4">
-            <h6 class="text-uppercase fw-bold mb-3">Discover</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="footer-link">The Team</a></li>
-              <li><a href="#" class="footer-link">Our History</a></li>
-              <li><a href="#" class="footer-link">Brand Motto</a></li>
-            </ul>
-          </div>
-          <div class="col-6 col-md-3 mb-4">
-            <h6 class="text-uppercase fw-bold mb-3">Find Us On</h6>
-            <ul class="list-unstyled">
-              <li><a href="#" class="footer-link"><i class="bi bi-facebook me-2"></i>Facebook</a></li>
-              <li><a href="#" class="footer-link"><i class="bi bi-twitter me-2"></i>Twitter</a></li>
-              <li><a href="#" class="footer-link"><i class="bi bi-instagram me-2"></i>Instagram</a></li>
-            </ul>
-          </div>
+    <footer class="footer bg-white border-top py-4">
+      <div class="container text-center">
+        <!-- Footer Nav Links -->
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-2"
+        >
+          <a href="home.html" class="simple-footer-link">Home</a>
+          <span class="text-muted">|</span>
+          <a href="#" class="simple-footer-link">About</a>
+          <span class="text-muted">|</span>
+          <a href="shop.html" class="simple-footer-link active">Shop</a>
+          <span class="text-muted">|</span>
+          <a href="#" class="simple-footer-link">Help</a>
         </div>
-        <hr class="border-secondary">
-        <div class="d-flex align-items-center">
-          <i class="bi bi-globe me-2"></i>
-          <span class="small text-white-50">© Aotearoa Adventure Gear. All rights reserved.</span>
+
+        <!-- Copyright -->
+        <div class="d-flex justify-content-center align-items-center">
+          <i class="bi bi-globe me-2 text-muted"></i>
+          <span class="small text-muted">© Aotearoa Adventure Gear</span>
         </div>
       </div>
     </footer>
@@ -360,6 +367,5 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
-
   </body>
 </html>

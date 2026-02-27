@@ -1,4 +1,6 @@
-/* Nav links */
+/* ==================
+   NAV LINKS
+=================== */
 .nav-link {
   color: #333 !important;
   font-size: 0.95rem;
@@ -10,7 +12,14 @@
   color: #000 !important;
 }
 
-/* Search input group - remove double border */
+.nav-link.active {
+  border-bottom: 2px solid #fff;
+  font-weight: 600;
+}
+
+/* ==================
+   SEARCH INPUT
+=================== */
 .input-group-text {
   border-right: none;
 }
@@ -24,7 +33,10 @@
   box-shadow: none;
   border-color: #ced4da;
 }
-/* Navbar dark mode fixes */
+
+/* ==================
+   NAVBAR DARK MODE
+=================== */
 .navbar.bg-dark .nav-link {
   color: rgba(255, 255, 255, 0.8) !important;
 }
@@ -53,19 +65,14 @@
   color: rgba(255, 255, 255, 0.5) !important;
 }
 
-.nav-link.active {
-  border-bottom: 2px solid #fff;
-  font-weight: 600;
-}
-/* About section */
-.about-section {
-  background-color: #fff;
-}
 .navbar.bg-dark .btn.active {
   border-bottom: 2px solid #fff;
   font-weight: 600;
 }
-/* Footer links */
+
+/* ==================
+   FOOTER - HOME PAGE (DARK)
+=================== */
 .footer-link {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -78,14 +85,38 @@
   text-decoration: none;
 }
 
-/* Footer headings */
 footer h6 {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
 }
+/* Active link in dark footer */
+.footer-link.active {
+  color: #fff;
+  font-weight: 600;
+}
 
+/* Active link in simple footer */
+.simple-footer-link.active {
+  color: #000;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+}
+/* ==================
+   FOOTER - INNER PAGES (SIMPLE)
+=================== */
+.simple-footer-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
 
-/* Hero Section */
+.simple-footer-link:hover {
+  color: #000;
+}
+
+/* ==================
+   HERO SECTION - HOME
+=================== */
 .hero-section {
   background-color: #fff;
   padding-top: 60px;
@@ -106,19 +137,24 @@ footer h6 {
 
 .hero-img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
-  border: 1px solid #dee2e6;
+  background-color: transparent;
 }
 
-/* Featured Products Carousel */
+/* ==================
+   FEATURED CAROUSEL
+=================== */
 .featured-section {
   background-color: #fff;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1);
+.carousel {
+  min-height: 500px;
+}
+
+.carousel-item {
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel-control-prev,
@@ -126,20 +162,29 @@ footer h6 {
   width: 40px;
 }
 
-/* Product Cards */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.featured-section .product-img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+/* ==================
+   PRODUCT CARDS
+=================== */
 .product-card {
-  border: 1px solid #dee2e6;
+  border: none;
   border-radius: 0;
   transition: box-shadow 0.2s;
 }
 
 .product-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.product-img {
-  height: 250px;
-  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-name {
@@ -156,28 +201,38 @@ footer h6 {
   margin-bottom: 4px;
 }
 
-/* Product Grid */
+/* ==================
+   PRODUCT GRID - HOME
+=================== */
 .product-grid-section {
   background-color: #fff;
 }
 
 .product-grid-img {
+  width: 100%;
   height: 160px;
   object-fit: cover;
+  background-color: transparent;
 }
 
 .product-grid-img-large {
+  width: 100%;
   height: 340px;
   object-fit: cover;
+  background-color: transparent;
 }
 
-/* Star Rating */
+/* ==================
+   STAR RATING
+=================== */
 .star-rating {
   color: #f5a623;
   font-size: 0.85rem;
 }
 
-/* Newsletter Section */
+/* ==================
+   NEWSLETTER
+=================== */
 .newsletter-section {
   background-color: #fff;
 }
@@ -187,7 +242,16 @@ footer h6 {
   font-weight: 400;
 }
 
-/* Floating Back to Top Button */
+.newsletter-img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* ==================
+   FLOATING ANCHOR
+=================== */
 .floating-anchor {
   position: fixed;
   bottom: 30px;
@@ -216,26 +280,26 @@ footer h6 {
   color: #fff;
 }
 
-.featured-section .product-img {
-  height: 450px;
-  object-fit: cover;
-}
-
-/* Shop Hero */
+/* ==================
+   SHOP HERO
+=================== */
 .shop-hero {
   background-color: #f8f9fa;
 }
 
-/* Categories */
+/* ==================
+   SHOP CATEGORIES
+=================== */
 .category-card {
-  border: 1px solid #dee2e6;
+  border: none;
   overflow: hidden;
 }
 
 .category-img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 250px;
+  object-fit: contain;
+  background-color: transparent;
 }
 
 .category-name {
@@ -247,7 +311,7 @@ footer h6 {
 
 .shop-now-card {
   background-color: #555;
-  height: 180px;
+  height: 250px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -256,14 +320,9 @@ footer h6 {
   background-color: #333;
 }
 
-/* Newsletter image */
-.newsletter-img {
-  height: 200px;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* Product listing */
+/* ==================
+   SHOP PRODUCT LISTING
+=================== */
 .listing-header {
   font-size: 1.8rem;
   font-weight: 400;
@@ -271,6 +330,77 @@ footer h6 {
 }
 
 .shop-product-img {
-  height: 180px;
-  object-fit: cover;
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+/* Shop horizontal product card */
+.shop-product-img-horizontal {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+/* ==================
+   ABOUT SECTION
+=================== */
+.about-section {
+  background-color: #fff;
+}
+
+/* ==================
+   RESPONSIVE BREAKPOINTS
+=================== */
+@media (max-width: 768px) {
+  .hero-tagline {
+    font-size: 1.5rem;
+  }
+
+  .hero-img {
+    height: 180px;
+  }
+
+  .featured-section .product-img {
+    height: 300px;
+  }
+
+  .product-grid-img-large {
+    height: 220px;
+  }
+
+  .category-img {
+    height: 180px;
+  }
+
+  .shop-now-card {
+    height: 180px;
+  }
+
+  .shop-product-img-horizontal {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-tagline {
+    font-size: 1.2rem;
+  }
+
+  .hero-img {
+    height: 150px;
+  }
+
+  .listing-header {
+    font-size: 1.4rem;
+  }
+
+  .shop-product-img-horizontal {
+    width: 80px;
+    height: 80px;
+  }
 }
