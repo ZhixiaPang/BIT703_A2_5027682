@@ -2,55 +2,168 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Aotearoa Adventure Gear</title>
+    <title>Product - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
-    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
-  <div class="container">
-    
-    <!-- Logo -->
-    <a class="navbar-brand me-2" href="home.html">
-      <img src="images/logo.png" alt="Logo" height="40" />
-    </a>
 
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+      <div class="container">
+        <a class="navbar-brand me-2" href="home.html">
+          <img src="images/logo.png" alt="Logo" height="100" />
+        </a>
+        <form class="d-flex" style="width: 220px; margin-right: 150px">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0">
+              <i class="bi bi-search"></i>
+            </span>
+            <input class="form-control border-start-0 ps-0" type="search" placeholder="Search..." aria-label="Search" />
+          </div>
+        </form>
+        <div class="d-flex align-items-center">
+          <a class="nav-link px-3" href="home.html">Home</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3" href="#">About</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3 " href="shop.html">Shop</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3" href="#">Help</a>
+          <a class="btn btn-dark ms-3" href="cart.html">🛒 Your Cart</a>
+        </div>
+      </div>
+    </nav>
 
-    <!-- Navbar links - pushed to center-right -->
-    <div class="d-flex align-items-center">
-      <a class="nav-link px-3" href="home.html">Home</a>
-      <span class="text-muted">|</span>
-      <a class="nav-link px-3" href="about.html">About</a>
-      <span class="text-muted">|</span>
-      <a class="nav-link px-3" href="shop.html">Shop</a>
-      <span class="text-muted">|</span>
-      <a class="nav-link px-3" href="help.html">Help</a>
-      <a class="btn btn-dark ms-3" href="cart.html">🛒 Your Cart</a>
-    </div>
+    <!-- Product Detail Section -->
+    <section class="product-detail-section py-5">
+      <div class="container">
+        <div class="row">
 
-  </div>
-</nav>
-    <!-- Floating Anchor - Back to Top -->
-    <a href="#" class="floating-anchor" id="backToTop" title="Back to Top">
-      <i class="bi bi-arrow-up"></i>
-    </a>
+          <!-- Left - Product Image -->
+          <div class="col-12 col-md-6 mb-4">
+            <div class="product-detail-img-wrapper">
+              <img id="productImage" src="" alt="Product Image" class="img-fluid product-detail-img">
+            </div>
+          </div>
+
+          <!-- Right - Product Info -->
+          <div class="col-12 col-md-6">
+            <h1 class="product-detail-title" id="productTitle">Loading...</h1>
+            
+            <!-- Stars and reviews -->
+            <div class="d-flex align-items-center mb-2">
+              <div class="star-rating me-2" id="productStars"></div>
+              <span class="text-muted small" id="productReviews"></span>
+            </div>
+
+            <hr>
+
+            <!-- Price and model selector -->
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <h3 class="product-detail-price mb-0" id="productPrice"></h3>
+              <select class="form-select w-auto" id="productModel">
+                <option value="">Select Model</option>
+              </select>
+            </div>
+
+            <!-- Description -->
+            <p class="text-muted" id="productDescription"></p>
+
+            <hr>
+
+            <!-- Add to Cart -->
+            <button class="btn btn-dark px-4 py-2" id="addToCartBtn" onclick="addToCart()">
+              Add To Cart
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Similar Products -->
+    <section class="similar-section py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Similar Products</h2>
+        <div class="row justify-content-center" id="similarProducts"></div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews-section py-5">
+      <div class="container">
+        <h2 class="mb-4">Reviews</h2>
+        
+        <!-- Review 1 -->
+        <div class="row mb-4">
+          <div class="col-12 col-md-3">
+            <div class="d-flex align-items-center mb-2">
+              <div class="review-avatar me-3">
+                <i class="bi bi-person-circle fs-2"></i>
+              </div>
+              <div>
+                <p class="fw-bold mb-0">JOHN DOE</p>
+                <p class="text-muted small mb-1">August 14, 2024</p>
+                <div class="star-rating small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-9">
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Review 2 -->
+        <div class="row mb-4">
+          <div class="col-12 col-md-3">
+            <div class="d-flex align-items-center mb-2">
+              <div class="review-avatar me-3">
+                <i class="bi bi-person-circle fs-2"></i>
+              </div>
+              <div>
+                <p class="fw-bold mb-0">JANE SMITH</p>
+                <p class="text-muted small mb-1">September 3, 2024</p>
+                <div class="star-rating small">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-9">
+            <p class="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer bg-white border-top py-4">
       <div class="container text-center">
-        <!-- Footer Nav Links -->
-        <div
-          class="d-flex justify-content-center align-items-center gap-3 mb-2"
-        >
+        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
           <a href="home.html" class="simple-footer-link">Home</a>
           <span class="text-muted">|</span>
           <a href="#" class="simple-footer-link">About</a>
@@ -59,8 +172,6 @@
           <span class="text-muted">|</span>
           <a href="#" class="simple-footer-link">Help</a>
         </div>
-
-        <!-- Copyright -->
         <div class="d-flex justify-content-center align-items-center">
           <i class="bi bi-globe me-2 text-muted"></i>
           <span class="small text-muted">© Aotearoa Adventure Gear</span>
@@ -68,9 +179,8 @@
       </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
     <script src="js/custom.js"></script>
+
   </body>
 </html>
