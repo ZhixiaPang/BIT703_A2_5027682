@@ -1,3 +1,15 @@
+/* Web Fonts */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand,
+.product-name,
+.hero-tagline {
+  font-family: 'Montserrat', sans-serif;
+}
+
 /* ==================
    NAV LINKS
 =================== */
@@ -150,7 +162,7 @@ footer h6 {
 }
 
 .carousel {
-  min-height: 500px;
+  min-height: 300px;
 }
 
 .carousel-item {
@@ -405,3 +417,103 @@ footer h6 {
   }
 }
 
+
+/* ==================
+   PROGRESS STEPS
+=================== */
+.progress-section {
+  background-color: #fff;
+}
+
+.step-item {
+  text-align: center;
+  flex: 1;
+}
+
+.step-text {
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.active-step .step-text {
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+}
+
+.step-divider {
+  flex: 1;
+  height: 1px;
+  background-color: #dee2e6;
+  margin: 0 10px;
+}
+
+/* ==================
+   CART
+=================== */
+.cart-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.cart-item {
+  border: 1px solid #dee2e6 !important;
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.cart-item-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.cart-item-desc {
+  font-size: 0.8rem;
+}
+
+.cart-item-price {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.cart-qty-input {
+  width: 70px;
+  text-align: center;
+}
+
+/* ==================
+   SUMMARY
+=================== */
+.summary-details span {
+  font-size: 0.9rem;
+}
+
+/* ==================
+   CART BADGE
+=================== */
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e63946;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.7rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.cart-badge.visible {
+  display: flex;
+}
