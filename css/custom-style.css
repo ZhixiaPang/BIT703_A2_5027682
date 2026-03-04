@@ -517,3 +517,43 @@ footer h6 {
 .cart-badge.visible {
   display: flex;
 }
+
+/* ==================
+   SHIPPING OPTIONS
+=================== */
+.shipping-option {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.shipping-option:hover {
+  background-color: #f8f9fa;
+}
+
+.shipping-option.selected {
+  background-color: #f0f0f0;
+  border-color: #333 !important;
+}
+
+/* ==================
+   PAYMENT OPTIONS
+=================== */
+.payment-option {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.payment-option:hover {
+  background-color: #f8f9fa;
+}
+
+.payment-option.selected {
+  background-color: #f0f0f0;
+  border-color: #333 !important;
+}
+
+#creditCardFields {
+  border-top: 1px solid #dee2e6;
+  padding-top: 15px;
+  margin-top: 10px;
+}

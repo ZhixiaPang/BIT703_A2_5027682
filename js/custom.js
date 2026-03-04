@@ -395,7 +395,7 @@ function addToCart() {
   const title = document.getElementById('productTitle').textContent;
   const price = document.getElementById('productPrice').textContent;
   const model = document.getElementById('productModel').value;
-  const image = document.getElementById('productImage').src;
+const image = document.getElementById('productImage').getAttribute('src');
 
   if (!model) {
     alert('Please select a model first!');
@@ -622,9 +622,449 @@ function applyCoupon() {
 // ==================
 document.addEventListener('DOMContentLoaded', loadProduct);
 document.addEventListener('DOMContentLoaded', loadCart);
+document.addEventListener('DOMContentLoaded', loadShippingPage);
 document.addEventListener('DOMContentLoaded', updateCartBadge);
+document.addEventListener('DOMContentLoaded', loadPaymentPage);
 document.addEventListener('DOMContentLoaded', function() {
   if (document.getElementById('shopProductGrid')) {
     renderShopProducts('all');
   }
 });
+// ==================
+// LOAD SHIPPING PAGE
+// ==================
+function loadShippingPage() {
+  const shippingSection = document.getElementById('shippingForm');
+  if (!shippingSection) return;
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Redirect to cart if empty
+  if (cart.length === 0) {
+    window.location.href = 'cart.html';
+    return;
+  }
+
+  // Load cart items in summary
+let itemsHTML = '';
+cart.forEach(function(item) {
+  itemsHTML += `
+    <div class="d-flex align-items-center mb-3 border p-2">
+      <img src="${item.image}" alt="${item.title}" 
+           class="cart-item-img me-3"
+           style="width:70px; height:70px; object-fit:contain;">
+      <div>
+        <p class="product-name mb-0">${item.title.toUpperCase()}</p>
+        <p class="text-muted small mb-0">Model: ${item.model}</p>
+        <p class="product-price mb-0">$${item.price}</p>
+      </div>
+    </div>
+  `;
+});
+document.getElementById('shippingSummaryItems').innerHTML = itemsHTML;
+
+  // Calculate summary
+  updateShippingSummary();
+
+  // Listen for shipping method change
+  document.querySelectorAll('input[name="shippingMethod"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      updateShippingSummary();
+      // Update selected style
+      document.getElementById('freeShippingOption').classList.remove('selected');
+      document.getElementById('nextDayOption').classList.remove('selected');
+      if (this.value === 'free') {
+        document.getElementById('freeShippingOption').classList.add('selected');
+      } else {
+        document.getElementById('nextDayOption').classList.add('selected');
+      }
+    });
+  });
+
+  // Set initial selected style
+  document.getElementById('freeShippingOption').classList.add('selected');
+}
+
+// ==================
+// UPDATE SHIPPING SUMMARY
+// ==================
+function updateShippingSummary() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let subtotal = 0;
+  cart.forEach(function(item) {
+    subtotal += item.price * item.qty;
+  });
+
+  const method = document.querySelector('input[name="shippingMethod"]:checked');
+  let shipping = 0;
+
+  if (method && method.value === 'nextday') {
+    shipping = 20;
+  } else {
+    // Free shipping logic - over $600 always free
+    shipping = subtotal > 600 ? 0 : 30;
+  }
+
+  const taxes = Math.round(subtotal * 0.02);
+  const total = subtotal + shipping + taxes;
+
+  document.getElementById('shippingSubtotal').textContent = '$' + subtotal;
+  document.getElementById('shippingCost').textContent = shipping === 0 ? 'FREE' : '$' + shipping;
+  document.getElementById('shippingTaxes').textContent = '$' + taxes;
+  document.getElementById('shippingTotal').textContent = '$' + total;
+}
+
+// ==================
+// TOGGLE VOUCHER
+// ==================
+function toggleVoucher() {
+  const voucherSection = document.getElementById('voucherSection');
+  const voucherIcon = document.getElementById('voucherIcon');
+  voucherSection.classList.toggle('d-none');
+  voucherIcon.classList.toggle('bi-chevron-down');
+  voucherIcon.classList.toggle('bi-chevron-up');
+}
+
+// ==================
+// APPLY VOUCHER
+// ==================
+function applyVoucher() {
+  const code = document.getElementById('voucherCode').value.trim();
+  if (code === '') {
+    alert('Please enter a voucher code!');
+    return;
+  }
+  if (code.toUpperCase() === 'ADVENTURE10') {
+    alert('Voucher applied! 10% discount added.');
+  } else {
+    alert('Invalid voucher code. Please try again.');
+  }
+}
+
+// ==================
+// VALIDATE SHIPPING FORM
+// ==================
+function proceedToPayment() {
+  const form = document.getElementById('shippingForm');
+  if (!form) return;
+
+  let valid = true;
+
+  // First name
+  const firstName = document.getElementById('firstName');
+  if (!firstName.value.trim()) {
+    firstName.classList.add('is-invalid');
+    valid = false;
+  } else {
+    firstName.classList.remove('is-invalid');
+    firstName.classList.add('is-valid');
+  }
+
+  // Last name
+  const lastName = document.getElementById('lastName');
+  if (!lastName.value.trim()) {
+    lastName.classList.add('is-invalid');
+    valid = false;
+  } else {
+    lastName.classList.remove('is-invalid');
+    lastName.classList.add('is-valid');
+  }
+
+  // Address
+  const address = document.getElementById('address');
+  if (!address.value.trim()) {
+    address.classList.add('is-invalid');
+    valid = false;
+  } else {
+    address.classList.remove('is-invalid');
+    address.classList.add('is-valid');
+  }
+
+  // Country
+  const country = document.getElementById('country');
+  if (!country.value) {
+    country.classList.add('is-invalid');
+    valid = false;
+  } else {
+    country.classList.remove('is-invalid');
+    country.classList.add('is-valid');
+  }
+
+  // City
+  const city = document.getElementById('city');
+  if (!city.value.trim()) {
+    city.classList.add('is-invalid');
+    valid = false;
+  } else {
+    city.classList.remove('is-invalid');
+    city.classList.add('is-valid');
+  }
+
+  // Zip/Postal Code - NZ format: 4 digits
+const zipCode = document.getElementById('zipCode');
+const zipRegex = /^\d{4}$/;
+if (!zipRegex.test(zipCode.value.trim())) {
+    zipCode.classList.add('is-invalid');
+    zipCode.nextElementSibling.textContent = 'Please enter a valid 4-digit NZ postal code.';
+    valid = false;
+} else {
+    zipCode.classList.remove('is-invalid');
+    zipCode.classList.add('is-valid');
+}
+
+// Phone - NZ format (improved)
+const phone = document.getElementById('phoneNumber');
+let phoneValue = phone.value.trim();
+
+// Clean input: remove spaces, dashes, parentheses, dots
+phoneValue = phoneValue.replace(/[\s\-\(\)\.]/g, '');
+
+const phoneRegex = /^(?:\+64|0)2?[0-9]{7,9}$/;
+
+if (!phoneValue || !phoneRegex.test(phoneValue)) {
+    phone.classList.add('is-invalid');
+    phone.classList.remove('is-valid');
+    phone.nextElementSibling.textContent = 
+        'Please enter a valid NZ phone number (e.g. 021 234 5678, +64212345678, 0271234567)';
+    valid = false;
+} else {
+    phone.classList.remove('is-invalid');
+    phone.classList.add('is-valid');
+    // Optional: show cleaned version to user
+    // phone.value = phoneValue;
+}
+
+if (valid) {
+    // Save shipping details to localStorage
+    const shippingData = {
+        firstName: firstName.value.trim(),
+        lastName: lastName.value.trim(),
+        address: address.value.trim(),
+        address2: document.getElementById('address2').value.trim(),
+        country: country.value,
+        city: city.value.trim(),
+        zipCode: zipCode.value.trim(),
+        phoneNumber: phone.value.trim(),           // keeps what user typed (with formatting)
+        // phoneNumber: phoneValue,                 // alternative: save cleaned version
+        shippingMethod: document.querySelector('input[name="shippingMethod"]:checked')?.value || 'free'
+    };
+    localStorage.setItem('shippingData', JSON.stringify(shippingData));
+    window.location.href = 'payment.html';
+}
+}
+
+// ==================
+// CANCEL SHIPPING
+// ==================
+function cancelShipping() {
+  if (confirm('Are you sure you want to cancel?')) {
+    localStorage.removeItem('cart');
+    localStorage.removeItem('shippingData');
+    window.location.href = 'home.html';
+  }
+}
+
+// ==================
+// LOAD PAYMENT PAGE
+// ==================
+function loadPaymentPage() {
+  const paymentSection = document.getElementById('paymentForm');
+  if (!paymentSection) return;
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Redirect to cart if empty
+  if (cart.length === 0) {
+    window.location.href = 'cart.html';
+    return;
+  }
+
+  // Load cart items in summary
+  let itemsHTML = '';
+  cart.forEach(function(item) {
+    itemsHTML += `
+      <div class="d-flex align-items-center mb-3 border p-2">
+        <img src="${item.image}" alt="${item.title}"
+             class="cart-item-img me-3"
+             style="width:70px; height:70px; object-fit:contain;">
+        <div>
+          <p class="product-name mb-0">${item.title.toUpperCase()}</p>
+          <p class="text-muted small mb-0">Model: ${item.model}</p>
+          <p class="product-price mb-0">$${item.price}</p>
+        </div>
+      </div>
+    `;
+  });
+  document.getElementById('paymentSummaryItems').innerHTML = itemsHTML;
+
+  // Calculate summary
+  updatePaymentSummary();
+
+  // Show/hide credit card fields based on selection
+  document.querySelectorAll('input[name="paymentMethod"]').forEach(function(radio) {
+    radio.addEventListener('change', function() {
+      const creditCardFields = document.getElementById('creditCardFields');
+      if (this.value === 'creditcard') {
+        creditCardFields.style.display = 'block';
+        document.getElementById('creditCardOption').classList.add('selected');
+        document.getElementById('paypalOption').classList.remove('selected');
+      } else {
+        creditCardFields.style.display = 'none';
+        document.getElementById('paypalOption').classList.add('selected');
+        document.getElementById('creditCardOption').classList.remove('selected');
+      }
+    });
+  });
+
+  // Set initial selected style
+  document.getElementById('creditCardOption').classList.add('selected');
+
+  // Format card number with spaces
+  const cardNumber = document.getElementById('cardNumber');
+  if (cardNumber) {
+    cardNumber.addEventListener('input', function() {
+      let value = this.value.replace(/\D/g, '');
+      value = value.replace(/(.{4})/g, '$1 ').trim();
+      this.value = value;
+    });
+  }
+
+  // Format expiry date
+  const expiryDate = document.getElementById('expiryDate');
+  if (expiryDate) {
+    expiryDate.addEventListener('input', function() {
+      let value = this.value.replace(/\D/g, '');
+      if (value.length >= 2) {
+        value = value.substring(0, 2) + ' / ' + value.substring(2);
+      }
+      this.value = value;
+    });
+  }
+}
+
+// ==================
+// UPDATE PAYMENT SUMMARY
+// ==================
+function updatePaymentSummary() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const shippingData = JSON.parse(localStorage.getItem('shippingData')) || {};
+
+  let subtotal = 0;
+  cart.forEach(function(item) {
+    subtotal += item.price * item.qty;
+  });
+
+  let shipping = 0;
+  if (shippingData.shippingMethod === 'nextday') {
+    shipping = 20;
+  } else {
+    shipping = subtotal > 600 ? 0 : 30;
+  }
+
+  const taxes = Math.round(subtotal * 0.02);
+  const total = subtotal + shipping + taxes;
+
+  document.getElementById('paymentSubtotal').textContent = '$' + subtotal;
+  document.getElementById('paymentShipping').textContent = shipping === 0 ? 'FREE' : '$' + shipping;
+  document.getElementById('paymentTaxes').textContent = '$' + taxes;
+  document.getElementById('paymentTotal').textContent = '$' + total;
+}
+
+// ==================
+// TOGGLE PAYMENT VOUCHER
+// ==================
+function togglePaymentVoucher() {
+  const voucherSection = document.getElementById('paymentVoucherSection');
+  const voucherIcon = document.getElementById('paymentVoucherIcon');
+  voucherSection.classList.toggle('d-none');
+  voucherIcon.classList.toggle('bi-chevron-down');
+  voucherIcon.classList.toggle('bi-chevron-up');
+}
+
+// ==================
+// APPLY PAYMENT VOUCHER
+// ==================
+function applyPaymentVoucher() {
+  const code = document.getElementById('paymentVoucherCode').value.trim();
+  if (code === '') {
+    alert('Please enter a voucher code!');
+    return;
+  }
+  if (code.toUpperCase() === 'ADVENTURE10') {
+    alert('Voucher applied! 10% discount added.');
+  } else {
+    alert('Invalid voucher code. Please try again.');
+  }
+}
+
+// ==================
+// PROCESS PAYMENT
+// ==================
+function processPayment() {
+  const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+  if (method === 'creditcard') {
+    let valid = true;
+
+    // Card number - 16 digits
+    const cardNumber = document.getElementById('cardNumber');
+    const cardDigits = cardNumber.value.replace(/\s/g, '');
+    if (!/^\d{16}$/.test(cardDigits)) {
+      cardNumber.classList.add('is-invalid');
+      valid = false;
+    } else {
+      cardNumber.classList.remove('is-invalid');
+      cardNumber.classList.add('is-valid');
+    }
+
+    // Expiry date MM/YY
+    const expiryDate = document.getElementById('expiryDate');
+    const expiryRegex = /^(0[1-9]|1[0-2]) \/ \d{2}$/;
+    if (!expiryRegex.test(expiryDate.value.trim())) {
+      expiryDate.classList.add('is-invalid');
+      valid = false;
+    } else {
+      expiryDate.classList.remove('is-invalid');
+      expiryDate.classList.add('is-valid');
+    }
+
+    // CVV - 3 digits
+    const cvv = document.getElementById('cvv');
+    if (!/^\d{3}$/.test(cvv.value.trim())) {
+      cvv.classList.add('is-invalid');
+      valid = false;
+    } else {
+      cvv.classList.remove('is-invalid');
+      cvv.classList.add('is-valid');
+    }
+
+    // Card holder name
+    const cardHolder = document.getElementById('cardHolder');
+    if (!cardHolder.value.trim()) {
+      cardHolder.classList.add('is-invalid');
+      valid = false;
+    } else {
+      cardHolder.classList.remove('is-invalid');
+      cardHolder.classList.add('is-valid');
+    }
+
+    if (!valid) return;
+  }
+
+  // Payment successful
+  alert('Payment successful! Thank you for your order!');
+  localStorage.removeItem('cart');
+  localStorage.removeItem('shippingData');
+  window.location.href = 'home.html';
+}
+
+// ==================
+// CANCEL PAYMENT
+// ==================
+function cancelPayment() {
+  if (confirm('Are you sure you want to cancel?')) {
+    localStorage.removeItem('cart');
+    localStorage.removeItem('shippingData');
+    window.location.href = 'home.html';
+  }
+}
