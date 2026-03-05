@@ -113,6 +113,43 @@ footer h6 {
   font-weight: 600;
   border-bottom: 2px solid #333;
 }
+
+/* ==================
+   ABOUT SECTION
+=================== */
+.about-section {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 1.3rem;
+  }
+}
+
 /* ==================
    FOOTER - INNER PAGES (SIMPLE)
 =================== */
@@ -126,6 +163,47 @@ footer h6 {
   color: #000;
 }
 
+
+/* ==================
+   RESPONSIVE LOGO
+=================== */
+.navbar-logo {
+  height: 70px;
+  width: auto;
+  transition: height 0.2s;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-logo {
+    height: 40px;
+  }
+}
+
+/* ==================
+   FOOTER LOGO
+=================== */
+.footer-logo {
+  height: 80px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .footer-logo {
+    height: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-logo {
+    height: 50px;
+  }
+}
 /* ==================
    HERO SECTION - HOME
 =================== */
@@ -254,11 +332,24 @@ footer h6 {
   font-weight: 400;
 }
 
+/* Newsletter image - shop page */
 .newsletter-img {
   width: 100%;
   height: 200px;
   object-fit: contain;
   background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .newsletter-img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .newsletter-img {
+    height: 120px;
+  }
 }
 
 /* ==================

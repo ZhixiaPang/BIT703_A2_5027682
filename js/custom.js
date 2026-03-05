@@ -564,6 +564,15 @@ function updateSummary() {
   if (!subtotalEl) return;
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+  if (cart.length === 0) {
+    document.getElementById('subtotal').textContent = '$0';
+    document.getElementById('shipping').textContent = '-';
+    document.getElementById('taxes').textContent = '$0';
+    document.getElementById('total').textContent = '$0';
+    return;
+  }
+
   let subtotal = 0;
   cart.forEach(function(item) {
     subtotal += item.price * item.qty;
@@ -578,7 +587,6 @@ function updateSummary() {
   document.getElementById('taxes').textContent = '$' + taxes;
   document.getElementById('total').textContent = '$' + total;
 }
-
 // ==================
 // PROCEED TO SHIPPING
 // ==================
