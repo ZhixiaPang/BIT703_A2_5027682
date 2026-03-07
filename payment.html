@@ -4,27 +4,37 @@
     <meta charset="UTF-8" />
     <title>Payment - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
       <div class="container">
         <a class="navbar-brand me-2" href="home.html">
           <img src="images/logo.png" alt="Logo" height="70" />
         </a>
-        <form class="d-flex" style="width: 220px; margin-right: 150px;">
+        <form class="d-flex" style="width: 220px; margin-right: 150px">
           <div class="input-group">
             <span class="input-group-text bg-white border-end-0">
               <i class="bi bi-search"></i>
             </span>
-            <input class="form-control border-start-0 ps-0" type="search" placeholder="Search..." aria-label="Search" />
+            <input
+              class="form-control border-start-0 ps-0"
+              type="search"
+              placeholder="Search..."
+              aria-label="Search"
+            />
           </div>
         </form>
         <div class="d-flex align-items-center">
@@ -67,13 +77,11 @@
     <section class="payment-section py-5">
       <div class="container">
         <div class="row">
-
           <!-- Left - Payment Form -->
           <div class="col-12 col-md-7 mb-4">
             <h2 class="cart-title mb-4">Payment method</h2>
 
             <form id="paymentForm">
-
               <!-- Credit Card Option -->
               <div class="payment-option border p-3 mb-3" id="creditCardOption">
                 <div class="form-check mb-3">
@@ -84,10 +92,13 @@
                     id="creditCard"
                     value="creditcard"
                     checked
-                  >
+                  />
                   <label class="form-check-label" for="creditCard">
-                    <span class="fw-bold">Credit Card</span><br>
-                    <span class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</span>
+                    <span class="fw-bold">Credit Card</span><br />
+                    <span class="text-muted small"
+                      >Pay securely using your Visa, Mastercard or American
+                      Express card.</span
+                    >
                   </label>
                 </div>
 
@@ -102,11 +113,13 @@
                       name="cardNumber"
                       placeholder="0000 0000 0000 0000"
                       maxlength="19"
-                    >
+                    />
                     <span class="input-group-text">
                       <i class="bi bi-credit-card"></i>
                     </span>
-                    <div class="invalid-feedback">Please enter a valid 16-digit card number.</div>
+                    <div class="invalid-feedback">
+                      Please enter a valid 16-digit card number.
+                    </div>
                   </div>
 
                   <!-- Expiry + CVV -->
@@ -119,8 +132,10 @@
                         name="expiryDate"
                         placeholder="MM / YY"
                         maxlength="7"
-                      >
-                      <div class="invalid-feedback">Please enter a valid expiry date (MM/YY).</div>
+                      />
+                      <div class="invalid-feedback">
+                        Please enter a valid expiry date (MM/YY).
+                      </div>
                     </div>
                     <div class="col-6">
                       <div class="input-group">
@@ -131,11 +146,16 @@
                           name="cvv"
                           placeholder="CVV"
                           maxlength="3"
-                        >
+                        />
                         <span class="input-group-text">
-                          <i class="bi bi-info-circle" title="3-digit security code on back of card"></i>
+                          <i
+                            class="bi bi-info-circle"
+                            title="3-digit security code on back of card"
+                          ></i>
                         </span>
-                        <div class="invalid-feedback">Please enter a valid 3-digit CVV.</div>
+                        <div class="invalid-feedback">
+                          Please enter a valid 3-digit CVV.
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -148,8 +168,10 @@
                       id="cardHolder"
                       name="cardHolder"
                       placeholder="Card Holder Name"
-                    >
-                    <div class="invalid-feedback">Please enter the card holder name.</div>
+                    />
+                    <div class="invalid-feedback">
+                      Please enter the card holder name.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -163,23 +185,45 @@
                     name="paymentMethod"
                     id="paypal"
                     value="paypal"
+                  />
+                  <label
+                    class="form-check-label d-flex justify-content-between align-items-start"
+                    for="paypal"
                   >
-                  <label class="form-check-label d-flex justify-content-between align-items-start" for="paypal">
                     <div>
-                      <span class="fw-bold">Paypal</span><br>
-                      <span class="text-muted small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</span>
+                      <span class="fw-bold">Paypal</span><br />
+                      <span class="text-muted small"
+                        >Fast and secure payment via your PayPal account. No
+                        card details required.</span
+                      >
                     </div>
-                    <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal" height="30" class="ms-3">
+                    <img
+                      src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png"
+                      alt="PayPal"
+                      height="30"
+                      class="ms-3"
+                    />
                   </label>
                 </div>
               </div>
 
               <!-- Pay Now and Cancel -->
               <div class="d-flex gap-3">
-                <button type="button" class="btn btn-dark px-5" onclick="processPayment()">Pay Now</button>
-                <button type="button" class="btn btn-light px-5" onclick="cancelPayment()">Cancel</button>
+                <button
+                  type="button"
+                  class="btn btn-dark px-5"
+                  onclick="processPayment()"
+                >
+                  Pay Now
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light px-5"
+                  onclick="cancelPayment()"
+                >
+                  Cancel
+                </button>
               </div>
-
             </form>
           </div>
 
@@ -192,45 +236,60 @@
 
             <!-- Voucher -->
             <div class="mb-3">
-              <div class="d-flex justify-content-between align-items-center border p-3"
-                style="cursor:pointer"
-                onclick="togglePaymentVoucher()">
+              <div
+                class="d-flex justify-content-between align-items-center border p-3"
+                style="cursor: pointer"
+                onclick="togglePaymentVoucher()"
+              >
                 <span class="fw-bold small">HAVE A VOUCHER?</span>
                 <i class="bi bi-chevron-down" id="paymentVoucherIcon"></i>
               </div>
-              <div id="paymentVoucherSection" class="d-none p-3 border border-top-0">
+              <div
+                id="paymentVoucherSection"
+                class="d-none p-3 border border-top-0"
+              >
                 <div class="d-flex gap-2">
-                  <input type="text" class="form-control" id="paymentVoucherCode" placeholder="Enter voucher code">
-                  <button class="btn btn-dark" type="button" onclick="applyPaymentVoucher()">Apply</button>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="paymentVoucherCode"
+                    placeholder="Enter voucher code"
+                  />
+                  <button
+                    class="btn btn-dark"
+                    type="button"
+                    onclick="applyPaymentVoucher()"
+                  >
+                    Apply
+                  </button>
                 </div>
               </div>
             </div>
 
-            <hr>
+            <hr />
 
             <!-- Summary Details -->
             <div class="summary-details">
               <div class="d-flex justify-content-between mb-2">
-                <span class="text-muted">SUBTOTAL</span>
+                <span class="summary-label">SUBTOTAL</span>
                 <span id="paymentSubtotal">$0</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
-                <span class="text-muted">SHIPPING</span>
+                <span class="summary-label">SHIPPING</span>
                 <span id="paymentShipping">FREE</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
-                <span class="text-muted">TAXES</span>
+                <span class="summary-label">TAXES</span>
                 <span id="paymentTaxes">$0</span>
               </div>
             </div>
 
-            <hr>
+            <hr />
 
             <div class="d-flex justify-content-between">
               <span class="fw-bold fs-5">TOTAL</span>
               <span class="fw-bold fs-5" id="paymentTotal">$0</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -239,7 +298,9 @@
     <!-- Footer -->
     <footer class="footer bg-white border-top py-4">
       <div class="container text-center">
-        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-2"
+        >
           <a href="home.html" class="simple-footer-link">Home</a>
           <span class="text-muted">|</span>
           <a href="#" class="simple-footer-link">About</a>
@@ -257,6 +318,5 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
-
   </body>
 </html>

@@ -4,37 +4,47 @@
     <meta charset="UTF-8" />
     <title>Shipping Details - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
       <div class="container">
         <a class="navbar-brand me-2" href="home.html">
           <img src="images/logo.png" alt="Logo" height="70" />
         </a>
-        <form class="d-flex" style="width: 220px; margin-right: 150px;">
+        <form class="d-flex" style="width: 220px; margin-right: 150px">
           <div class="input-group">
             <span class="input-group-text bg-white border-end-0">
               <i class="bi bi-search"></i>
             </span>
-            <input class="form-control border-start-0 ps-0" type="search" placeholder="Search..." aria-label="Search" />
+            <input
+              class="form-control border-start-0 ps-0"
+              type="search"
+              placeholder="Search..."
+              aria-label="Search"
+            />
           </div>
         </form>
         <div class="d-flex align-items-center">
           <a class="nav-link px-3" href="home.html">Home</a>
           <span class="text-muted">|</span>
-          <a class="nav-link px-3" href="#">About</a>
+          <a class="nav-link px-3" href="about.html">About</a>
           <span class="text-muted">|</span>
           <a class="nav-link px-3" href="shop.html">Shop</a>
           <span class="text-muted">|</span>
-          <a class="nav-link px-3" href="#">Help</a>
+          <a class="nav-link px-3" href="help.html">Help</a>
           <a class="btn btn-dark ms-3 position-relative" href="cart.html">
             🛒 Your Cart
             <span class="cart-badge" id="cartBadge"></span>
@@ -67,13 +77,11 @@
     <section class="shipping-section py-5">
       <div class="container">
         <div class="row">
-
           <!-- Left - Shipping Form -->
           <div class="col-12 col-md-7 mb-4">
             <h2 class="cart-title mb-4">Shipping Details</h2>
 
             <form id="shippingForm">
-
               <!-- First Name + Last Name -->
               <div class="row mb-3">
                 <div class="col-6">
@@ -84,8 +92,10 @@
                     name="firstName"
                     placeholder="First Name"
                     required
-                  >
-                  <div class="invalid-feedback">Please enter your first name.</div>
+                  />
+                  <div class="invalid-feedback">
+                    Please enter your first name.
+                  </div>
                 </div>
                 <div class="col-6">
                   <input
@@ -95,8 +105,10 @@
                     name="lastName"
                     placeholder="Last Name"
                     required
-                  >
-                  <div class="invalid-feedback">Please enter your last name.</div>
+                  />
+                  <div class="invalid-feedback">
+                    Please enter your last name.
+                  </div>
                 </div>
               </div>
 
@@ -109,7 +121,7 @@
                   name="address"
                   placeholder="Address"
                   required
-                >
+                />
                 <div class="invalid-feedback">Please enter your address.</div>
               </div>
 
@@ -121,13 +133,18 @@
                   id="address2"
                   name="address2"
                   placeholder="Address 2"
-                >
+                />
               </div>
 
               <!-- Country + City -->
               <div class="row mb-3">
                 <div class="col-6">
-                  <select class="form-select" id="country" name="country" required>
+                  <select
+                    class="form-select"
+                    id="country"
+                    name="country"
+                    required
+                  >
                     <option value="">Country</option>
                     <option value="NZ">New Zealand</option>
                     <option value="AU">Australia</option>
@@ -145,7 +162,7 @@
                     name="city"
                     placeholder="City"
                     required
-                  >
+                  />
                   <div class="invalid-feedback">Please enter your city.</div>
                 </div>
               </div>
@@ -160,8 +177,10 @@
                     name="zipCode"
                     placeholder="Zip/Postal Code"
                     required
-                  >
-                  <div class="invalid-feedback">Please enter a valid postal code.</div>
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid postal code.
+                  </div>
                 </div>
                 <div class="col-6">
                   <input
@@ -171,15 +190,21 @@
                     name="phoneNumber"
                     placeholder="Phone Number"
                     required
-                  >
-                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid phone number.
+                  </div>
                 </div>
               </div>
 
               <!-- Shipping Options -->
+              <!-- Shipping Options -->
               <div class="row mb-4">
                 <div class="col-6">
-                  <div class="shipping-option p-3 border" id="freeShippingOption">
+                  <div
+                    class="shipping-option p-3 border"
+                    id="freeShippingOption"
+                  >
                     <div class="form-check">
                       <input
                         class="form-check-input"
@@ -188,10 +213,13 @@
                         id="freeShipping"
                         value="free"
                         checked
-                      >
+                      />
                       <label class="form-check-label" for="freeShipping">
-                        <span class="fw-bold">Free Shipping</span><br>
-                        <span class="text-muted small">Between 2 - 5 working days</span>
+                        <span class="fw-bold">Standard Shipping</span><br />
+                        <span class="text-muted small"
+                          >Free on orders over $600 (otherwise $15)</span
+                        ><br />
+                        <span class="text-muted small">Delivery: 2–5 working days</span>
                       </label>
                     </div>
                   </div>
@@ -205,10 +233,15 @@
                         name="shippingMethod"
                         id="nextDay"
                         value="nextday"
-                      >
+                      />
                       <label class="form-check-label" for="nextDay">
-                        <span class="fw-bold">Next Day Delivery - $20</span><br>
-                        <span class="text-muted small">24 hours from checkout</span>
+                        <span class="fw-bold">Next Day Delivery</span><br />
+                        <span class="text-muted small"
+                          >Flat rate: $20</span
+                        ><br />
+                        <span class="text-muted small"
+                          >Estimated delivery: within 24 hours</span
+                        >
                       </label>
                     </div>
                   </div>
@@ -217,10 +250,21 @@
 
               <!-- Next and Cancel -->
               <div class="d-flex gap-3">
-                <button type="button" class="btn btn-dark px-5" onclick="proceedToPayment()">Next</button>
-                <button type="button" class="btn btn-light px-5" onclick="cancelShipping()">Cancel</button>
+                <button
+                  type="button"
+                  class="btn btn-dark px-5"
+                  onclick="proceedToPayment()"
+                >
+                  Next
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light px-5"
+                  onclick="cancelShipping()"
+                >
+                  Cancel
+                </button>
               </div>
-
             </form>
           </div>
 
@@ -233,45 +277,57 @@
 
             <!-- Voucher -->
             <div class="mb-3">
-              <div class="d-flex justify-content-between align-items-center border p-3"
-                style="cursor:pointer"
-                onclick="toggleVoucher()">
+              <div
+                class="d-flex justify-content-between align-items-center border p-3"
+                style="cursor: pointer"
+                onclick="toggleVoucher()"
+              >
                 <span class="fw-bold small">HAVE A VOUCHER?</span>
                 <i class="bi bi-chevron-down" id="voucherIcon"></i>
               </div>
               <div id="voucherSection" class="d-none p-3 border border-top-0">
                 <div class="d-flex gap-2">
-                  <input type="text" class="form-control" id="voucherCode" placeholder="Enter voucher code">
-                  <button class="btn btn-dark" type="button" onclick="applyVoucher()">Apply</button>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="voucherCode"
+                    placeholder="Enter voucher code"
+                  />
+                  <button
+                    class="btn btn-dark"
+                    type="button"
+                    onclick="applyVoucher()"
+                  >
+                    Apply
+                  </button>
                 </div>
               </div>
             </div>
 
-            <hr>
+            <hr />
 
             <!-- Summary Details -->
             <div class="summary-details">
               <div class="d-flex justify-content-between mb-2">
-                <span class="text-muted">SUBTOTAL</span>
+                <span class="summary-label">SUBTOTAL</span>
                 <span id="shippingSubtotal">$0</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
-                <span class="text-muted">SHIPPING</span>
+                <span class="summary-label">SHIPPING</span>
                 <span id="shippingCost">FREE</span>
               </div>
               <div class="d-flex justify-content-between mb-2">
-                <span class="text-muted">TAXES</span>
+                <span class="summary-label">TAXES</span>
                 <span id="shippingTaxes">$0</span>
               </div>
             </div>
 
-            <hr>
+            <hr />
 
             <div class="d-flex justify-content-between">
               <span class="fw-bold fs-5">TOTAL</span>
               <span class="fw-bold fs-5" id="shippingTotal">$0</span>
             </div>
-
           </div>
         </div>
       </div>
@@ -280,14 +336,16 @@
     <!-- Footer -->
     <footer class="footer bg-white border-top py-4">
       <div class="container text-center">
-        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-2"
+        >
           <a href="home.html" class="simple-footer-link">Home</a>
           <span class="text-muted">|</span>
-          <a href="#" class="simple-footer-link">About</a>
+          <a href="about.html" class="simple-footer-link">About</a>
           <span class="text-muted">|</span>
           <a href="shop.html" class="simple-footer-link">Shop</a>
           <span class="text-muted">|</span>
-          <a href="#" class="simple-footer-link">Help</a>
+          <a href="help.html" class="simple-footer-link">Help</a>
         </div>
         <div class="d-flex justify-content-center align-items-center">
           <i class="bi bi-globe me-2 text-muted"></i>
@@ -298,6 +356,5 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
-
   </body>
 </html>

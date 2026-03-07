@@ -4,41 +4,51 @@
     <meta charset="UTF-8" />
     <title>Shopping Cart - Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/custom-style.css" />
   </head>
   <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
       <div class="container">
         <a class="navbar-brand me-2" href="home.html">
           <img src="images/logo.png" alt="Logo" height="100" />
         </a>
-       <form class="d-none d-lg-flex me-auto" style="width: 220px">
+        <form class="d-none d-lg-flex me-auto" style="width: 220px">
           <div class="input-group">
             <span class="input-group-text bg-white border-end-0">
               <i class="bi bi-search"></i>
             </span>
-            <input class="form-control border-start-0 ps-0" type="search" placeholder="Search..." aria-label="Search" />
+            <input
+              class="form-control border-start-0 ps-0"
+              type="search"
+              placeholder="Search..."
+              aria-label="Search"
+            />
           </div>
         </form>
         <div class="d-flex align-items-center">
           <a class="nav-link px-3" href="home.html">Home</a>
           <span class="text-muted">|</span>
-          <a class="nav-link px-3" href="#">About</a>
+          <a class="nav-link px-3" href="about.html">About</a>
           <span class="text-muted">|</span>
           <a class="nav-link px-3" href="shop.html">Shop</a>
           <span class="text-muted">|</span>
-          <a class="nav-link px-3" href="#">Help</a>
-       <a class="btn btn-dark ms-3 position-relative" href="cart.html">
-  🛒 Your Cart
-  <span class="cart-badge" id="cartBadge"></span>
-</a>
+          <a class="nav-link px-3" href="help.html">Help</a>
+          <a class="btn btn-dark ms-3 position-relative" href="cart.html">
+            🛒 Your Cart
+            <span class="cart-badge" id="cartBadge"></span>
+          </a>
         </div>
       </div>
     </nav>
@@ -49,7 +59,6 @@
         <div class="row">
           <div class="col-12">
             <div class="d-flex justify-content-between align-items-center">
-
               <!-- Step 1 - Active -->
               <div class="step-item active-step">
                 <span class="step-text">1. Shopping Cart</span>
@@ -71,7 +80,6 @@
               <div class="step-item">
                 <span class="step-text text-muted">3. Payment Options</span>
               </div>
-
             </div>
           </div>
         </div>
@@ -79,78 +87,103 @@
     </section>
 
     <!-- Cart Section -->
-<section class="cart-section py-5">
-  <div class="container">
-    <div class="row">
+    <section class="cart-section py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Left - Cart Items -->
+          <div class="col-12 col-md-7 mb-4">
+            <h2 class="cart-title mb-4">Shopping Cart</h2>
+            <form id="cartForm">
+              <!-- Cart items loaded by JS -->
+              <div id="cartItems"></div>
 
-      <!-- Left - Cart Items -->
-      <div class="col-12 col-md-7 mb-4">
-        <h2 class="cart-title mb-4">Shopping Cart</h2>
-        <form id="cartForm">
-          <!-- Cart items loaded by JS -->
-          <div id="cartItems"></div>
-
-          <!-- Next and Cancel Buttons -->
-          <div class="d-flex gap-3 mt-4">
-            <button type="button" class="btn btn-dark px-5" onclick="proceedToShipping()">Next</button>
-            <button type="button" class="btn btn-light px-5" onclick="cancelCart()">Cancel</button>
+              <!-- Next and Cancel Buttons -->
+              <div class="d-flex gap-3 mt-4">
+                <button
+                  type="button"
+                  class="btn btn-dark px-5"
+                  onclick="proceedToShipping()"
+                >
+                  Next
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light px-5"
+                  onclick="cancelCart()"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+
+          <!-- Right - Summary -->
+          <div class="col-12 col-md-5 mb-4">
+            <h2 class="cart-title mb-4">Summary</h2>
+
+            <!-- Coupon Code -->
+            <div class="mb-3">
+              <label class="fw-bold small mb-2">ENTER COUPON CODE</label>
+              <div class="d-flex gap-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="couponCode"
+                  name="couponCode"
+                  placeholder="Coupon code"
+                />
+                <button
+                  class="btn btn-dark"
+                  type="button"
+                  onclick="applyCoupon()"
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+
+            <hr />
+
+            <!-- Summary Details -->
+            <div class="summary-details">
+              <div class="d-flex justify-content-between mb-2">
+                <span class="summary-label">SUBTOTAL</span>
+                <span id="subtotal">$0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="summary-label">SHIPPING</span>
+                <span id="shipping">$0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="summary-label">TAXES</span>
+                <span id="taxes">$0</span>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="d-flex justify-content-between">
+              <span class="fw-bold fs-5">TOTAL</span>
+              <span class="fw-bold fs-5" id="total">$0</span>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <!-- Right - Summary -->
-      <div class="col-12 col-md-5 mb-4">
-        <h2 class="cart-title mb-4">Summary</h2>
-
-        <!-- Coupon Code -->
-        <div class="mb-3">
-          <label class="fw-bold small mb-2">ENTER COUPON CODE</label>
-          <div class="d-flex gap-2">
-            <input type="text" class="form-control" id="couponCode" name="couponCode" placeholder="Coupon code">
-            <button class="btn btn-dark" type="button" onclick="applyCoupon()">Apply</button>
-          </div>
-        </div>
-
-        <hr>
-
-        <!-- Summary Details -->
-        <div class="summary-details">
-          <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted">SUBTOTAL</span>
-            <span id="subtotal">$0</span>
-          </div>
-          <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted">SHIPPING</span>
-            <span id="shipping">$0</span>
-          </div>
-          <div class="d-flex justify-content-between mb-2">
-            <span class="text-muted">TAXES</span>
-            <span id="taxes">$0</span>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="d-flex justify-content-between">
-          <span class="fw-bold fs-5">TOTAL</span>
-          <span class="fw-bold fs-5" id="total">$0</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="footer bg-white border-top py-4">
       <div class="container text-center">
-        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-2"
+        >
           <a href="home.html" class="simple-footer-link">Home</a>
           <span class="text-muted">|</span>
-          <a href="#" class="simple-footer-link">About</a>
+          <a href="about.html" class="simple-footer-link">About</a>
           <span class="text-muted">|</span>
           <a href="shop.html" class="simple-footer-link">Shop</a>
           <span class="text-muted">|</span>
-          <a href="#" class="simple-footer-link">Help</a>
+          <a href="help.html" class="simple-footer-link">Help</a>
         </div>
         <div class="d-flex justify-content-center align-items-center">
           <i class="bi bi-globe me-2 text-muted"></i>
@@ -161,6 +194,5 @@
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
-
   </body>
 </html>

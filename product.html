@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Aotearoa Adventure Gear</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,7 +47,7 @@
 
         <!-- Navbar links - pushed to center-right -->
         <div class="d-flex align-items-center">
-          <a class="nav-link px-3 " href="home.html">Home</a>
+          <a class="nav-link px-3" href="home.html">Home</a>
           <span class="text-muted">|</span>
           <a class="nav-link px-3" href="about.html">About</a>
           <span class="text-muted">|</span>
@@ -55,9 +55,9 @@
           <span class="text-muted">|</span>
           <a class="nav-link px-3" href="help.html">Help</a>
           <a class="btn btn-dark ms-3 position-relative" href="cart.html">
-  🛒 Your Cart
-  <span class="cart-badge" id="cartBadge"></span>
-</a>
+            🛒 Your Cart
+            <span class="cart-badge" id="cartBadge"></span>
+          </a>
         </div>
       </div>
     </nav>
@@ -65,25 +65,29 @@
     <section class="product-detail-section py-5">
       <div class="container">
         <div class="row">
-
           <!-- Left - Product Image -->
           <div class="col-12 col-md-6 mb-4">
             <div class="product-detail-img-wrapper">
-              <img id="productImage" src="" alt="Product Image" class="img-fluid product-detail-img">
+              <img
+                id="productImage"
+                src=""
+                alt="Product Image"
+                class="img-fluid product-detail-img"
+              />
             </div>
           </div>
 
           <!-- Right - Product Info -->
           <div class="col-12 col-md-6">
             <h1 class="product-detail-title" id="productTitle">Loading...</h1>
-            
+
             <!-- Stars and reviews -->
             <div class="d-flex align-items-center mb-2">
               <div class="star-rating me-2" id="productStars"></div>
               <span class="text-muted small" id="productReviews"></span>
             </div>
 
-            <hr>
+            <hr />
 
             <!-- Price and model selector -->
             <div class="d-flex align-items-center gap-3 mb-3">
@@ -94,15 +98,17 @@
             </div>
 
             <!-- Description -->
-            <p class="text-muted" id="productDescription"></p>
+            <p class="product-description mt-4" id="productDescription"></p>
 
-            <hr>
-
+            <hr />
             <!-- Add to Cart -->
-            <button class="btn btn-dark px-4 py-2" id="addToCartBtn" onclick="addToCart()">
+            <button
+              class="btn btn-dark px-4 py-2 mt-4"
+              id="addToCartBtn"
+              onclick="addToCart()"
+            >
               Add To Cart
             </button>
-
           </div>
         </div>
       </div>
@@ -117,25 +123,27 @@
     </section>
 
     <!-- Reviews Section -->
-<section class="reviews-section py-5">
-  <div class="container">
-    <h2 class="mb-4">Reviews</h2>
-    <div id="reviewsContainer">
-      <!-- Reviews loaded dynamically by JS -->
-    </div>
-  </div>
-</section>
+    <section class="reviews-section py-5">
+      <div class="container">
+        <h2 class="mb-4">Reviews</h2>
+        <div id="reviewsContainer">
+          <!-- Reviews loaded dynamically by JS -->
+        </div>
+      </div>
+    </section>
     <!-- Footer -->
     <footer class="footer bg-white border-top py-4">
       <div class="container text-center">
-        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+        <div
+          class="d-flex justify-content-center align-items-center gap-3 mb-2"
+        >
           <a href="home.html" class="simple-footer-link">Home</a>
           <span class="text-muted">|</span>
-          <a href="#" class="simple-footer-link">About</a>
+          <a href="about.html" class="simple-footer-link">About</a>
           <span class="text-muted">|</span>
           <a href="shop.html" class="simple-footer-link">Shop</a>
           <span class="text-muted">|</span>
-          <a href="#" class="simple-footer-link">Help</a>
+          <a href="help.html" class="simple-footer-link">Help</a>
         </div>
         <div class="d-flex justify-content-center align-items-center">
           <i class="bi bi-globe me-2 text-muted"></i>
@@ -148,16 +156,21 @@
     <script src="js/custom.js"></script>
 
     <!-- Toast Notification -->
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="cartToast" class="toast align-items-center text-white bg-dark border-0" role="alert">
-    <div class="d-flex">
-      <div class="toast-body" id="toastMessage">
-        Item added to cart!
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div
+        id="cartToast"
+        class="toast align-items-center text-white bg-dark border-0"
+        role="alert"
+      >
+        <div class="d-flex">
+          <div class="toast-body" id="toastMessage">Item added to cart!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
     </div>
-  </div>
-</div>
-
   </body>
 </html>

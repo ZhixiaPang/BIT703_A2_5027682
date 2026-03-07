@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Help - Aotearoa Adventure Gear</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/custom-style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+      <div class="container">
+        <a class="navbar-brand me-2" href="home.html">
+          <img src="images/logo.png" alt="Logo" class="navbar-logo" />
+        </a>
+        <div class="d-flex align-items-center">
+          <a class="nav-link px-3" href="home.html">Home</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3" href="about.html">About</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3" href="shop.html">Shop</a>
+          <span class="text-muted">|</span>
+          <a class="nav-link px-3 active" href="help.html">Help</a>
+          <a class="btn btn-dark ms-3 position-relative" href="cart.html">
+            🛒 Your Cart
+            <span class="cart-badge" id="cartBadge"></span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Coming Soon Section -->
+    <section class="py-5 text-center" style="min-height: 60vh; display: flex; align-items: center;">
+      <div class="container">
+        <i class="bi bi-headset fs-1 text-muted mb-4 d-block"></i>
+        <h1 class="mb-3" style="font-family: 'Montserrat', sans-serif;">Help & Support — Coming Soon</h1>
+        <p style="color: #444; max-width: 500px; margin: 0 auto 2rem;">
+          We are working on our help centre. Check back soon for FAQs, contact details and support resources.
+        </p>
+        <a href="home.html" class="btn btn-dark px-4">Back to Home</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-white border-top py-4">
+      <div class="container text-center">
+        <div class="d-flex justify-content-center align-items-center gap-3 mb-2">
+          <a href="home.html" class="simple-footer-link">Home</a>
+          <span class="text-muted">|</span>
+          <a href="about.html" class="simple-footer-link">About</a>
+          <span class="text-muted">|</span>
+          <a href="shop.html" class="simple-footer-link">Shop</a>
+          <span class="text-muted">|</span>
+          <a href="help.html" class="simple-footer-link active">Help</a>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+          <i class="bi bi-globe me-2 text-muted"></i>
+          <span class="small text-muted">© Aotearoa Adventure Gear</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

@@ -352,6 +352,18 @@ footer h6 {
   }
 }
 
+.newsletter-text {
+  color: #222222;
+}
+.product-description {
+  font-size: 1rem;
+  color: #3f3e3e;
+}
+.product-listing-section .listing-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3f3e3e;
+}
 /* ==================
    FLOATING ANCHOR
 =================== */
@@ -456,6 +468,9 @@ footer h6 {
   flex-shrink: 0;
 }
 
+.shop-subtitle {
+  color: #555252;
+}
 /* ==================
    ABOUT SECTION
 =================== */
@@ -655,4 +670,9 @@ footer h6 {
   border-top: 1px solid #dee2e6;
   padding-top: 15px;
   margin-top: 10px;
+}
+
+.summary-label {
+  color: #4c4b4b;
+
 }

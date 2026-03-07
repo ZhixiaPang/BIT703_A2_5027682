@@ -724,14 +724,14 @@ function updateSummary() {
     subtotal += item.price * item.qty;
   });
 
-  const shipping = subtotal > 600 ? 0 : 30;
+  const shipping = subtotal > 600 ? 0 : 15;
   const taxes = Math.round(subtotal * 0.02);
   const total = subtotal + shipping + taxes;
 
-  document.getElementById('subtotal').textContent = '$' + subtotal;
-  document.getElementById('shipping').textContent = shipping === 0 ? 'FREE' : '$' + shipping;
-  document.getElementById('taxes').textContent = '$' + taxes;
-  document.getElementById('total').textContent = '$' + total;
+document.getElementById('subtotal').textContent = '$' + subtotal.toFixed(2);
+document.getElementById('shipping').textContent = shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2);
+document.getElementById('taxes').textContent = '$' + taxes.toFixed(2);
+document.getElementById('total').textContent = '$' + total.toFixed(2);
 }
 
 // ==================
@@ -837,16 +837,16 @@ function updateShippingSummary() {
   if (method && method.value === 'nextday') {
     shipping = 20;
   } else {
-    shipping = subtotal > 600 ? 0 : 30;
+    shipping = subtotal > 600 ? 0 : 15;
   }
 
   const taxes = Math.round(subtotal * 0.02);
   const total = subtotal + shipping + taxes;
 
-  document.getElementById('shippingSubtotal').textContent = '$' + subtotal;
-  document.getElementById('shippingCost').textContent = shipping === 0 ? 'FREE' : '$' + shipping;
-  document.getElementById('shippingTaxes').textContent = '$' + taxes;
-  document.getElementById('shippingTotal').textContent = '$' + total;
+document.getElementById('shippingSubtotal').textContent = '$' + subtotal.toFixed(2);
+document.getElementById('shippingCost').textContent = shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2);
+document.getElementById('shippingTaxes').textContent = '$' + taxes.toFixed(2);
+document.getElementById('shippingTotal').textContent = '$' + total.toFixed(2);
 }
 
 // ==================
@@ -1078,16 +1078,16 @@ function updatePaymentSummary() {
   if (shippingData.shippingMethod === 'nextday') {
     shipping = 20;
   } else {
-    shipping = subtotal > 600 ? 0 : 30;
+    shipping = subtotal > 600 ? 0 : 15;
   }
 
   const taxes = Math.round(subtotal * 0.02);
   const total = subtotal + shipping + taxes;
 
-  document.getElementById('paymentSubtotal').textContent = '$' + subtotal;
-  document.getElementById('paymentShipping').textContent = shipping === 0 ? 'FREE' : '$' + shipping;
-  document.getElementById('paymentTaxes').textContent = '$' + taxes;
-  document.getElementById('paymentTotal').textContent = '$' + total;
+document.getElementById('paymentSubtotal').textContent = '$' + subtotal.toFixed(2);
+document.getElementById('paymentShipping').textContent = shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2);
+document.getElementById('paymentTaxes').textContent = '$' + taxes.toFixed(2);
+document.getElementById('paymentTotal').textContent = '$' + total.toFixed(2);
 }
 
 // ==================
@@ -1118,7 +1118,7 @@ function applyPaymentVoucher() {
 }
 
 // ==================
-// PROCESS PAYMENT
+// PROCESS PAYMENT AND VALIDATE CREDIT CARD DETAILS
 // ==================
 function processPayment() {
   const method = document.querySelector('input[name="paymentMethod"]:checked').value;
@@ -1245,20 +1245,24 @@ function initSearch() {
 // ==================
 // RUN ON PAGE LOAD
 // ==================
-document.addEventListener('DOMContentLoaded', loadProduct);
-document.addEventListener('DOMContentLoaded', loadCart);
-document.addEventListener('DOMContentLoaded', loadShippingPage);
-document.addEventListener('DOMContentLoaded', loadPaymentPage);
-document.addEventListener('DOMContentLoaded', updateCartBadge);
-document.addEventListener('DOMContentLoaded', initSearch);
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+  loadProduct();
+  loadCart();
+  loadShippingPage();
+  loadPaymentPage();
+  updateCartBadge();
+  initSearch();
+
   if (document.getElementById('shopProductGrid')) {
     const params = new URLSearchParams(window.location.search);
     const searchTerm = params.get('search');
+
     if (searchTerm) {
       renderShopProducts('search', searchTerm);
+
       const heroInput = document.getElementById('shopHeroSearchInput');
       if (heroInput) heroInput.value = searchTerm;
+
     } else {
       renderShopProducts('featured');
     }
