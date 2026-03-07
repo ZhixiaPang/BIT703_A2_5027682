@@ -119,20 +119,18 @@ footer h6 {
 =================== */
 .about-section {
   background-color: #f8f9fa;
-  border-top: 1px solid #dee2e6;
-  border-bottom: 1px solid #dee2e6;
 }
 
 .about-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
-  color: #333;
+  color: #0b0b0b;
 }
 
 .about-text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.8;
-  color: #666;
+  color: #121212;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 15px;
@@ -215,8 +213,8 @@ footer h6 {
 
 .hero-tagline {
   font-size: 2rem;
-  font-weight: 400;
-  color: #333;
+  font-weight: 600;
+  color: #3d3b3b;
 }
 
 .hero-divider {
@@ -226,6 +224,7 @@ footer h6 {
 }
 
 .hero-img {
+  margin-top: 50px;
   width: 100%;
   height: 250px;
   object-fit: cover;
@@ -337,6 +336,7 @@ footer h6 {
   width: 100%;
   height: 200px;
   object-fit: contain;
+  margin-left: -30px;
   background-color: transparent;
 }
 
@@ -427,9 +427,17 @@ footer h6 {
    SHOP PRODUCT LISTING
 =================== */
 .listing-header {
-  font-size: 1.8rem;
-  font-weight: 400;
-  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.listing-description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #888;
 }
 
 .shop-product-img {

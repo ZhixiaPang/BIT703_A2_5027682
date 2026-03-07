@@ -49,7 +49,11 @@ const products = [
     stars: 4,
     reviews: '24 Reviews',
     models: ['30L', '45L', '60L'],
-    category: 'backpack'
+    category: 'backpack',
+    reviewList: [
+      { name: 'James Wilson', date: 'January 12, 2024', stars: 5, comment: 'Perfect for the Tongariro Alpine Crossing! Very comfortable and durable.' },
+      { name: 'Sarah Thompson', date: 'February 8, 2024', stars: 3, comment: 'Good quality but the straps could be more padded for longer hikes.' }
+    ]
   },
   {
     id: 2,
@@ -60,7 +64,11 @@ const products = [
     stars: 4,
     reviews: '19 Reviews',
     models: ['40L', '55L'],
-    category: 'backpack'
+    category: 'backpack',
+    reviewList: [
+      { name: 'Mike Harrington', date: 'March 5, 2024', stars: 4, comment: 'Used this on the Milford Track. Plenty of space and very comfortable.' },
+      { name: 'Emma Clarke', date: 'April 2, 2024', stars: 4, comment: 'Great backpack for the price. Highly recommend for multi-day trips.' }
+    ]
   },
   {
     id: 3,
@@ -71,7 +79,11 @@ const products = [
     stars: 5,
     reviews: '27 Reviews',
     models: ['50L', '65L'],
-    category: 'backpack'
+    category: 'backpack',
+    reviewList: [
+      { name: 'Tom Henderson', date: 'May 14, 2024', stars: 5, comment: 'Best backpack I have ever owned. The rain cover saved me on the Routeburn Track!' },
+      { name: 'Lucy Patterson', date: 'June 20, 2024', stars: 5, comment: 'Absolutely love this pack. Worth every dollar.' }
+    ]
   },
   {
     id: 4,
@@ -82,7 +94,11 @@ const products = [
     stars: 5,
     reviews: '15 Reviews',
     models: ['35L', '50L'],
-    category: 'backpack'
+    category: 'backpack',
+    reviewList: [
+      { name: 'Chris Anderson', date: 'July 3, 2024', stars: 5, comment: 'Perfect for Mount Cook climbing. The ice axe loops are a great feature.' },
+      { name: 'Rachel Green', date: 'August 11, 2024', stars: 4, comment: 'Lightweight and sturdy. Great for alpine conditions.' }
+    ]
   },
 
   // TENTS
@@ -95,7 +111,11 @@ const products = [
     stars: 4,
     reviews: '18 Reviews',
     models: ['2 Person', '3 Person', '4 Person'],
-    category: 'tent'
+    category: 'tent',
+    reviewList: [
+      { name: 'David Murray', date: 'January 25, 2024', stars: 4, comment: 'Great tent for NZ weather. Survived a stormy night in Fiordland!' },
+      { name: 'Sophie Baker', date: 'February 14, 2024', stars: 4, comment: 'Easy to set up and very weatherproof. Happy with this purchase.' }
+    ]
   },
   {
     id: 6,
@@ -106,7 +126,11 @@ const products = [
     stars: 4,
     reviews: '15 Reviews',
     models: ['3 Person', '4 Person'],
-    category: 'tent'
+    category: 'tent',
+    reviewList: [
+      { name: 'Mark Stevens', date: 'March 18, 2024', stars: 5, comment: 'Used this in winter conditions near Queenstown. Stayed perfectly dry and warm.' },
+      { name: 'Anna Mitchell', date: 'April 22, 2024', stars: 3, comment: 'Good tent but quite heavy to carry on longer treks.' }
+    ]
   },
   {
     id: 7,
@@ -117,7 +141,11 @@ const products = [
     stars: 4,
     reviews: '22 Reviews',
     models: ['1 Person', '2 Person'],
-    category: 'tent'
+    category: 'tent',
+    reviewList: [
+      { name: 'Paul Robinson', date: 'May 7, 2024', stars: 4, comment: 'Incredibly light and compact. Perfect for solo treks on the Te Araroa trail.' },
+      { name: 'Claire Watson', date: 'June 15, 2024', stars: 4, comment: 'Amazing how small this packs down. Great for ultralight hiking.' }
+    ]
   },
   {
     id: 8,
@@ -128,7 +156,11 @@ const products = [
     stars: 5,
     reviews: '12 Reviews',
     models: ['2 Person', '3 Person'],
-    category: 'tent'
+    category: 'tent',
+    reviewList: [
+      { name: 'Nathan Ford', date: 'July 19, 2024', stars: 5, comment: 'Pitched this in strong winds near Mt Aspiring. Held up brilliantly!' },
+      { name: 'Olivia Reed', date: 'August 5, 2024', stars: 5, comment: 'Best tent I have used in NZ conditions. Highly recommend.' }
+    ]
   },
 
   // SLEEPING BAGS
@@ -141,7 +173,11 @@ const products = [
     stars: 3,
     reviews: '12 Reviews',
     models: ['Regular', 'Long'],
-    category: 'sleeping-bag'
+    category: 'sleeping-bag',
+    reviewList: [
+      { name: 'Ben Carter', date: 'January 30, 2024', stars: 3, comment: 'Decent sleeping bag but I found it a bit cold at -10C. Good for milder conditions.' },
+      { name: 'Mia Turner', date: 'February 20, 2024', stars: 3, comment: 'Good value for money but not the warmest at extreme temperatures.' }
+    ]
   },
   {
     id: 10,
@@ -152,7 +188,11 @@ const products = [
     stars: 5,
     reviews: '16 Reviews',
     models: ['Regular', 'Long'],
-    category: 'sleeping-bag'
+    category: 'sleeping-bag',
+    reviewList: [
+      { name: 'Jack Phillips', date: 'March 10, 2024', stars: 5, comment: 'Incredibly warm! Used this on a winter trip to the Southern Alps. Perfect.' },
+      { name: 'Zoe Campbell', date: 'April 5, 2024', stars: 5, comment: 'Worth every cent. Stayed warm in -15C conditions near Mount Cook.' }
+    ]
   },
   {
     id: 11,
@@ -163,7 +203,11 @@ const products = [
     stars: 3,
     reviews: '9 Reviews',
     models: ['Regular'],
-    category: 'sleeping-bag'
+    category: 'sleeping-bag',
+    reviewList: [
+      { name: 'Liam Evans', date: 'May 22, 2024', stars: 3, comment: 'Great for summer camping in Abel Tasman. Would not use it in winter though.' },
+      { name: 'Isabelle Young', date: 'June 30, 2024', stars: 3, comment: 'Light and compact but only suitable for warmer conditions.' }
+    ]
   },
   {
     id: 12,
@@ -174,7 +218,11 @@ const products = [
     stars: 4,
     reviews: '20 Reviews',
     models: ['Regular', 'Long'],
-    category: 'sleeping-bag'
+    category: 'sleeping-bag',
+    reviewList: [
+      { name: 'Harry Scott', date: 'July 14, 2024', stars: 4, comment: 'Great all-round sleeping bag. Used it across three seasons in NZ.' },
+      { name: 'Grace Adams', date: 'August 22, 2024', stars: 4, comment: 'Very comfortable and warm enough for most NZ conditions.' }
+    ]
   },
 
   // BOOTS
@@ -187,7 +235,11 @@ const products = [
     stars: 4,
     reviews: '33 Reviews',
     models: ['Size 7', 'Size 8', 'Size 9', 'Size 10', 'Size 11'],
-    category: 'boots'
+    category: 'boots',
+    reviewList: [
+      { name: 'Connor Hughes', date: 'January 8, 2024', stars: 4, comment: 'Excellent grip on wet NZ trails. Very comfortable for all day hiking.' },
+      { name: 'Ella Morgan', date: 'February 16, 2024', stars: 4, comment: 'Waterproof and durable. Perfect for the Kepler Track.' }
+    ]
   },
   {
     id: 14,
@@ -198,7 +250,11 @@ const products = [
     stars: 5,
     reviews: '18 Reviews',
     models: ['Size 7', 'Size 8', 'Size 9', 'Size 10', 'Size 11'],
-    category: 'boots'
+    category: 'boots',
+    reviewList: [
+      { name: 'Ryan Cooper', date: 'March 24, 2024', stars: 5, comment: 'Used these with crampons on Mount Ruapehu. Performed brilliantly!' },
+      { name: 'Lily Parker', date: 'April 12, 2024', stars: 5, comment: 'Best alpine boots I have owned. Stiff sole is perfect for technical terrain.' }
+    ]
   },
   {
     id: 15,
@@ -209,7 +265,11 @@ const products = [
     stars: 3,
     reviews: '11 Reviews',
     models: ['Size 7', 'Size 8', 'Size 9', 'Size 10', 'Size 11'],
-    category: 'boots'
+    category: 'boots',
+    reviewList: [
+      { name: 'Owen Bailey', date: 'May 18, 2024', stars: 3, comment: 'Good for day hikes but not suitable for longer multi-day treks.' },
+      { name: 'Chloe Rivera', date: 'June 25, 2024', stars: 3, comment: 'Decent boots for the price. Comfortable but not the most durable.' }
+    ]
   },
   {
     id: 16,
@@ -220,7 +280,11 @@ const products = [
     stars: 5,
     reviews: '25 Reviews',
     models: ['Size 7', 'Size 8', 'Size 9', 'Size 10', 'Size 11'],
-    category: 'boots'
+    category: 'boots',
+    reviewList: [
+      { name: 'Ethan Price', date: 'July 8, 2024', stars: 5, comment: 'Incredible boots for alpine climbing. Used them on the Mueller Hut Route.' },
+      { name: 'Ava Richardson', date: 'August 16, 2024', stars: 5, comment: 'Worth the investment. Best boots for serious NZ mountain adventures.' }
+    ]
   },
 
   // RAIN JACKETS
@@ -233,7 +297,11 @@ const products = [
     stars: 5,
     reviews: '31 Reviews',
     models: ['Small', 'Medium', 'Large', 'XL'],
-    category: 'jacket'
+    category: 'jacket',
+    reviewList: [
+      { name: 'Lucas Bennett', date: 'January 20, 2024', stars: 5, comment: 'Kept me completely dry on a very wet day on the Routeburn Track. Excellent!' },
+      { name: 'Charlotte Wood', date: 'February 28, 2024', stars: 5, comment: 'Lightweight and fully waterproof. Best rain jacket I have owned.' }
+    ]
   },
   {
     id: 18,
@@ -244,7 +312,11 @@ const products = [
     stars: 4,
     reviews: '14 Reviews',
     models: ['Small', 'Medium', 'Large', 'XL'],
-    category: 'jacket'
+    category: 'jacket',
+    reviewList: [
+      { name: 'Mason Turner', date: 'March 15, 2024', stars: 4, comment: 'Great jacket for Fiordland weather. The seam sealing really works.' },
+      { name: 'Amelia Collins', date: 'April 28, 2024', stars: 4, comment: 'Very windproof and waterproof. A bit pricey but worth it.' }
+    ]
   },
   {
     id: 19,
@@ -255,7 +327,11 @@ const products = [
     stars: 4,
     reviews: '21 Reviews',
     models: ['Small', 'Medium', 'Large', 'XL'],
-    category: 'jacket'
+    category: 'jacket',
+    reviewList: [
+      { name: 'Logan Peterson', date: 'May 10, 2024', stars: 4, comment: 'Great layering piece for cold Canterbury days. Very warm and comfortable.' },
+      { name: 'Harper Stewart', date: 'June 18, 2024', stars: 4, comment: 'Perfect mid layer for NZ mountain conditions. Highly recommend.' }
+    ]
   },
   {
     id: 20,
@@ -266,7 +342,11 @@ const products = [
     stars: 5,
     reviews: '17 Reviews',
     models: ['Small', 'Medium', 'Large', 'XL'],
-    category: 'jacket'
+    category: 'jacket',
+    reviewList: [
+      { name: 'Elijah Sanders', date: 'July 22, 2024', stars: 5, comment: 'Exceptional jacket for alpine conditions. Used it on Aoraki/Mount Cook.' },
+      { name: 'Scarlett Price', date: 'August 30, 2024', stars: 5, comment: 'Premium quality jacket. Worth every dollar for serious alpine adventures.' }
+    ]
   },
 
   // PANTS
@@ -279,7 +359,11 @@ const products = [
     stars: 4,
     reviews: '28 Reviews',
     models: ['XS', 'S', 'M', 'L', 'XL'],
-    category: 'pants'
+    category: 'pants',
+    reviewList: [
+      { name: 'Sebastian Foster', date: 'January 15, 2024', stars: 4, comment: 'Very comfortable for long days on the trail. Dried quickly after stream crossings.' },
+      { name: 'Victoria Hughes', date: 'February 22, 2024', stars: 4, comment: 'Great fit and very breathable. Perfect for NZ summer hiking.' }
+    ]
   },
   {
     id: 22,
@@ -290,7 +374,11 @@ const products = [
     stars: 4,
     reviews: '16 Reviews',
     models: ['XS', 'S', 'M', 'L', 'XL'],
-    category: 'pants'
+    category: 'pants',
+    reviewList: [
+      { name: 'Julian Ross', date: 'March 28, 2024', stars: 4, comment: 'Excellent windproof pants for alpine conditions. Kept me warm and dry.' },
+      { name: 'Penelope Gray', date: 'April 16, 2024', stars: 4, comment: 'Great fit and very functional for mountain conditions.' }
+    ]
   },
   {
     id: 23,
@@ -301,7 +389,11 @@ const products = [
     stars: 5,
     reviews: '22 Reviews',
     models: ['XS', 'S', 'M', 'L', 'XL'],
-    category: 'pants'
+    category: 'pants',
+    reviewList: [
+      { name: 'Xavier Bell', date: 'May 24, 2024', stars: 5, comment: 'The reinforced knees are a great feature for technical climbing in NZ.' },
+      { name: 'Aria Jenkins', date: 'June 10, 2024', stars: 5, comment: 'Best alpine pants I have owned. Very durable and comfortable.' }
+    ]
   },
   {
     id: 24,
@@ -312,7 +404,11 @@ const products = [
     stars: 3,
     reviews: '14 Reviews',
     models: ['XS', 'S', 'M', 'L', 'XL'],
-    category: 'pants'
+    category: 'pants',
+    reviewList: [
+      { name: 'Finn Cooper', date: 'July 28, 2024', stars: 3, comment: 'Decent trail pants for the price. Good for casual hiking.' },
+      { name: 'Isla Morgan', date: 'August 14, 2024', stars: 3, comment: 'Comfortable but not the most durable. Good for lighter trails.' }
+    ]
   }
 ];
 
@@ -334,6 +430,7 @@ function loadProduct() {
   document.getElementById('productImage').src = product.image;
   document.getElementById('productImage').alt = product.name;
 
+  // Fill stars
   let starsHTML = '';
   for (let i = 1; i <= 5; i++) {
     starsHTML += i <= product.stars
@@ -342,6 +439,7 @@ function loadProduct() {
   }
   document.getElementById('productStars').innerHTML = starsHTML;
 
+  // Fill model selector
   const modelSelect = document.getElementById('productModel');
   product.models.forEach(function(model) {
     const option = document.createElement('option');
@@ -350,6 +448,7 @@ function loadProduct() {
     modelSelect.appendChild(option);
   });
 
+  // Load similar products
   const similar = products.filter(p => p.category === product.category && p.id !== id).slice(0, 3);
   let similarHTML = '';
   similar.forEach(function(p) {
@@ -368,23 +467,40 @@ function loadProduct() {
     `;
   });
   document.getElementById('similarProducts').innerHTML = similarHTML;
-}
 
-// ==================
-// UPDATE CART BADGE
-// ==================
-function updateCartBadge() {
-  const badge = document.getElementById('cartBadge');
-  if (!badge) return;
-
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-
-  if (totalItems > 0) {
-    badge.textContent = totalItems;
-    badge.classList.add('visible');
-  } else {
-    badge.classList.remove('visible');
+  // Load dynamic reviews
+  const reviewsContainer = document.getElementById('reviewsContainer');
+  if (reviewsContainer && product.reviewList) {
+    let reviewsHTML = '';
+    product.reviewList.forEach(function(review, index) {
+      let reviewStars = '';
+      for (let i = 1; i <= 5; i++) {
+        reviewStars += i <= review.stars
+          ? '<i class="bi bi-star-fill"></i>'
+          : '<i class="bi bi-star"></i>';
+      }
+      reviewsHTML += `
+        <div class="row mb-4">
+          <div class="col-12 col-md-3">
+            <div class="d-flex align-items-center mb-2">
+              <div class="review-avatar me-3">
+                <i class="bi bi-person-circle fs-2"></i>
+              </div>
+              <div>
+                <p class="fw-bold mb-0">${review.name.toUpperCase()}</p>
+                <p class="text-muted small mb-1">${review.date}</p>
+                <div class="star-rating small">${reviewStars}</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-9">
+            <p class="text-muted">${review.comment}</p>
+          </div>
+        </div>
+        ${index < product.reviewList.length - 1 ? '<hr>' : ''}
+      `;
+    });
+    reviewsContainer.innerHTML = reviewsHTML;
   }
 }
 
@@ -395,7 +511,7 @@ function addToCart() {
   const title = document.getElementById('productTitle').textContent;
   const price = document.getElementById('productPrice').textContent;
   const model = document.getElementById('productModel').value;
-const image = document.getElementById('productImage').getAttribute('src');
+  const image = document.getElementById('productImage').getAttribute('src');
 
   if (!model) {
     alert('Please select a model first!');
@@ -418,7 +534,7 @@ const image = document.getElementById('productImage').getAttribute('src');
 
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  // Show toast instead of alert
+  // Show toast
   const toastMessage = document.getElementById('toastMessage');
   if (toastMessage) {
     toastMessage.textContent = `${title} (${model}) added to cart!`;
@@ -428,24 +544,54 @@ const image = document.getElementById('productImage').getAttribute('src');
     toast.show();
   }
 
-  // Update badge
   updateCartBadge();
 }
+
+// ==================
+// UPDATE CART BADGE
+// ==================
+function updateCartBadge() {
+  const badge = document.getElementById('cartBadge');
+  if (!badge) return;
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+
+  if (totalItems > 0) {
+    badge.textContent = totalItems;
+    badge.classList.add('visible');
+  } else {
+    badge.classList.remove('visible');
+  }
+}
+
 // ==================
 // SHOP PRODUCT FILTER
 // ==================
-function renderShopProducts(filter) {
+function renderShopProducts(filter, searchTerm) {
   const grid = document.getElementById('shopProductGrid');
   if (!grid) return;
 
-  // Show one product from each category by default
   const featuredIds = [1, 5, 9, 13, 17, 21];
-  const filtered = filter === 'all'
-    ? products.filter(p => featuredIds.includes(p.id))
-    : products.filter(p => p.category === filter);
+  let filtered;
+
+  if (filter === 'search' && searchTerm) {
+    const term = searchTerm.toLowerCase();
+    filtered = products.filter(p =>
+      p.name.toLowerCase().includes(term) ||
+      p.category.toLowerCase().includes(term) ||
+      p.description.toLowerCase().includes(term)
+    );
+  } else if (filter === 'all') {
+    filtered = products;
+  } else if (filter === 'featured') {
+    filtered = products.filter(p => featuredIds.includes(p.id));
+  } else {
+    filtered = products.filter(p => p.category === filter);
+  }
 
   if (filtered.length === 0) {
-    grid.innerHTML = '<p class="text-muted">No products found in this category.</p>';
+    grid.innerHTML = '<p class="text-muted">No products found. Try a different search term.</p>';
     return;
   }
 
@@ -564,7 +710,7 @@ function updateSummary() {
   if (!subtotalEl) return;
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
+
   if (cart.length === 0) {
     document.getElementById('subtotal').textContent = '$0';
     document.getElementById('shipping').textContent = '-';
@@ -587,6 +733,7 @@ function updateSummary() {
   document.getElementById('taxes').textContent = '$' + taxes;
   document.getElementById('total').textContent = '$' + total;
 }
+
 // ==================
 // PROCEED TO SHIPPING
 // ==================
@@ -626,19 +773,6 @@ function applyCoupon() {
 }
 
 // ==================
-// RUN ON PAGE LOAD
-// ==================
-document.addEventListener('DOMContentLoaded', loadProduct);
-document.addEventListener('DOMContentLoaded', loadCart);
-document.addEventListener('DOMContentLoaded', loadShippingPage);
-document.addEventListener('DOMContentLoaded', updateCartBadge);
-document.addEventListener('DOMContentLoaded', loadPaymentPage);
-document.addEventListener('DOMContentLoaded', function() {
-  if (document.getElementById('shopProductGrid')) {
-    renderShopProducts('all');
-  }
-});
-// ==================
 // LOAD SHIPPING PAGE
 // ==================
 function loadShippingPage() {
@@ -647,38 +781,33 @@ function loadShippingPage() {
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  // Redirect to cart if empty
   if (cart.length === 0) {
     window.location.href = 'cart.html';
     return;
   }
 
-  // Load cart items in summary
-let itemsHTML = '';
-cart.forEach(function(item) {
-  itemsHTML += `
-    <div class="d-flex align-items-center mb-3 border p-2">
-      <img src="${item.image}" alt="${item.title}" 
-           class="cart-item-img me-3"
-           style="width:70px; height:70px; object-fit:contain;">
-      <div>
-        <p class="product-name mb-0">${item.title.toUpperCase()}</p>
-        <p class="text-muted small mb-0">Model: ${item.model}</p>
-        <p class="product-price mb-0">$${item.price}</p>
+  let itemsHTML = '';
+  cart.forEach(function(item) {
+    itemsHTML += `
+      <div class="d-flex align-items-center mb-3 border p-2">
+        <img src="${item.image}" alt="${item.title}"
+             class="cart-item-img me-3"
+             style="width:70px; height:70px; object-fit:contain;">
+        <div>
+          <p class="product-name mb-0">${item.title.toUpperCase()}</p>
+          <p class="text-muted small mb-0">Model: ${item.model}</p>
+          <p class="product-price mb-0">$${item.price}</p>
+        </div>
       </div>
-    </div>
-  `;
-});
-document.getElementById('shippingSummaryItems').innerHTML = itemsHTML;
+    `;
+  });
+  document.getElementById('shippingSummaryItems').innerHTML = itemsHTML;
 
-  // Calculate summary
   updateShippingSummary();
 
-  // Listen for shipping method change
   document.querySelectorAll('input[name="shippingMethod"]').forEach(function(radio) {
     radio.addEventListener('change', function() {
       updateShippingSummary();
-      // Update selected style
       document.getElementById('freeShippingOption').classList.remove('selected');
       document.getElementById('nextDayOption').classList.remove('selected');
       if (this.value === 'free') {
@@ -689,7 +818,6 @@ document.getElementById('shippingSummaryItems').innerHTML = itemsHTML;
     });
   });
 
-  // Set initial selected style
   document.getElementById('freeShippingOption').classList.add('selected');
 }
 
@@ -709,7 +837,6 @@ function updateShippingSummary() {
   if (method && method.value === 'nextday') {
     shipping = 20;
   } else {
-    // Free shipping logic - over $600 always free
     shipping = subtotal > 600 ? 0 : 30;
   }
 
@@ -758,7 +885,6 @@ function proceedToPayment() {
 
   let valid = true;
 
-  // First name
   const firstName = document.getElementById('firstName');
   if (!firstName.value.trim()) {
     firstName.classList.add('is-invalid');
@@ -768,7 +894,6 @@ function proceedToPayment() {
     firstName.classList.add('is-valid');
   }
 
-  // Last name
   const lastName = document.getElementById('lastName');
   if (!lastName.value.trim()) {
     lastName.classList.add('is-invalid');
@@ -778,7 +903,6 @@ function proceedToPayment() {
     lastName.classList.add('is-valid');
   }
 
-  // Address
   const address = document.getElementById('address');
   if (!address.value.trim()) {
     address.classList.add('is-invalid');
@@ -788,7 +912,6 @@ function proceedToPayment() {
     address.classList.add('is-valid');
   }
 
-  // Country
   const country = document.getElementById('country');
   if (!country.value) {
     country.classList.add('is-invalid');
@@ -798,7 +921,6 @@ function proceedToPayment() {
     country.classList.add('is-valid');
   }
 
-  // City
   const city = document.getElementById('city');
   if (!city.value.trim()) {
     city.classList.add('is-invalid');
@@ -808,23 +930,22 @@ function proceedToPayment() {
     city.classList.add('is-valid');
   }
 
-  // Zip/Postal Code - NZ format: 4 digits
-const zipCode = document.getElementById('zipCode');
-const zipRegex = /^\d{4}$/;
-if (!zipRegex.test(zipCode.value.trim())) {
+  const zipCode = document.getElementById('zipCode');
+  const zipRegex = /^\d{4}$/;
+  if (!zipRegex.test(zipCode.value.trim())) {
     zipCode.classList.add('is-invalid');
     zipCode.nextElementSibling.textContent = 'Please enter a valid 4-digit NZ postal code.';
     valid = false;
-} else {
+  } else {
     zipCode.classList.remove('is-invalid');
     zipCode.classList.add('is-valid');
-}
+  }
 
-// Phone - NZ format (improved)
+
 const phone = document.getElementById('phoneNumber');
 let phoneValue = phone.value.trim();
 
-// Clean input: remove spaces, dashes, parentheses, dots
+
 phoneValue = phoneValue.replace(/[\s\-\(\)\.]/g, '');
 
 const phoneRegex = /^(?:\+64|0)2?[0-9]{7,9}$/;
@@ -838,12 +959,11 @@ if (!phoneValue || !phoneRegex.test(phoneValue)) {
 } else {
     phone.classList.remove('is-invalid');
     phone.classList.add('is-valid');
-    // Optional: show cleaned version to user
-    // phone.value = phoneValue;
+
 }
 
 if (valid) {
-    // Save shipping details to localStorage
+   
     const shippingData = {
         firstName: firstName.value.trim(),
         lastName: lastName.value.trim(),
@@ -852,9 +972,8 @@ if (valid) {
         country: country.value,
         city: city.value.trim(),
         zipCode: zipCode.value.trim(),
-        phoneNumber: phone.value.trim(),           // keeps what user typed (with formatting)
-        // phoneNumber: phoneValue,                 // alternative: save cleaned version
-        shippingMethod: document.querySelector('input[name="shippingMethod"]:checked')?.value || 'free'
+        phoneNumber: phone.value.trim(),          
+               shippingMethod: document.querySelector('input[name="shippingMethod"]:checked')?.value || 'free'
     };
     localStorage.setItem('shippingData', JSON.stringify(shippingData));
     window.location.href = 'payment.html';
@@ -881,13 +1000,11 @@ function loadPaymentPage() {
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  // Redirect to cart if empty
   if (cart.length === 0) {
     window.location.href = 'cart.html';
     return;
   }
 
-  // Load cart items in summary
   let itemsHTML = '';
   cart.forEach(function(item) {
     itemsHTML += `
@@ -905,10 +1022,8 @@ function loadPaymentPage() {
   });
   document.getElementById('paymentSummaryItems').innerHTML = itemsHTML;
 
-  // Calculate summary
   updatePaymentSummary();
 
-  // Show/hide credit card fields based on selection
   document.querySelectorAll('input[name="paymentMethod"]').forEach(function(radio) {
     radio.addEventListener('change', function() {
       const creditCardFields = document.getElementById('creditCardFields');
@@ -924,10 +1039,8 @@ function loadPaymentPage() {
     });
   });
 
-  // Set initial selected style
   document.getElementById('creditCardOption').classList.add('selected');
 
-  // Format card number with spaces
   const cardNumber = document.getElementById('cardNumber');
   if (cardNumber) {
     cardNumber.addEventListener('input', function() {
@@ -937,7 +1050,6 @@ function loadPaymentPage() {
     });
   }
 
-  // Format expiry date
   const expiryDate = document.getElementById('expiryDate');
   if (expiryDate) {
     expiryDate.addEventListener('input', function() {
@@ -1014,7 +1126,6 @@ function processPayment() {
   if (method === 'creditcard') {
     let valid = true;
 
-    // Card number - 16 digits
     const cardNumber = document.getElementById('cardNumber');
     const cardDigits = cardNumber.value.replace(/\s/g, '');
     if (!/^\d{16}$/.test(cardDigits)) {
@@ -1025,7 +1136,6 @@ function processPayment() {
       cardNumber.classList.add('is-valid');
     }
 
-    // Expiry date MM/YY
     const expiryDate = document.getElementById('expiryDate');
     const expiryRegex = /^(0[1-9]|1[0-2]) \/ \d{2}$/;
     if (!expiryRegex.test(expiryDate.value.trim())) {
@@ -1036,7 +1146,6 @@ function processPayment() {
       expiryDate.classList.add('is-valid');
     }
 
-    // CVV - 3 digits
     const cvv = document.getElementById('cvv');
     if (!/^\d{3}$/.test(cvv.value.trim())) {
       cvv.classList.add('is-invalid');
@@ -1046,7 +1155,6 @@ function processPayment() {
       cvv.classList.add('is-valid');
     }
 
-    // Card holder name
     const cardHolder = document.getElementById('cardHolder');
     if (!cardHolder.value.trim()) {
       cardHolder.classList.add('is-invalid');
@@ -1059,7 +1167,6 @@ function processPayment() {
     if (!valid) return;
   }
 
-  // Payment successful
   alert('Payment successful! Thank you for your order!');
   localStorage.removeItem('cart');
   localStorage.removeItem('shippingData');
@@ -1076,3 +1183,84 @@ function cancelPayment() {
     window.location.href = 'home.html';
   }
 }
+
+// ==================
+// SEARCH FUNCTIONALITY
+// ==================
+function initSearch() {
+  // Home page search - redirect to shop with search term
+  const homeSearchForm = document.getElementById('homeSearchForm');
+  if (homeSearchForm) {
+    homeSearchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const term = document.getElementById('homeSearchInput').value.trim();
+      if (term) {
+        window.location.href = 'shop.html?search=' + encodeURIComponent(term);
+      }
+    });
+  }
+
+  // Shop navbar search - filter products live
+  const shopNavSearchForm = document.getElementById('shopNavSearchForm');
+  if (shopNavSearchForm) {
+    shopNavSearchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const term = document.getElementById('shopNavSearchInput').value.trim();
+      if (term) {
+        renderShopProducts('search', term);
+        const grid = document.getElementById('productGrid');
+        if (grid) grid.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Shop hero search - filter products live
+  const shopSearchForm = document.getElementById('shopSearchForm');
+  if (shopSearchForm) {
+    shopSearchForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const term = document.getElementById('shopHeroSearchInput').value.trim();
+      if (term) {
+        renderShopProducts('search', term);
+        const grid = document.getElementById('productGrid');
+        if (grid) grid.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Check URL for search parameter on shop page load
+  const params = new URLSearchParams(window.location.search);
+  const searchTerm = params.get('search');
+  if (searchTerm && document.getElementById('shopProductGrid')) {
+    renderShopProducts('search', searchTerm);
+    const heroInput = document.getElementById('shopHeroSearchInput');
+    const navInput = document.getElementById('shopNavSearchInput');
+    if (heroInput) heroInput.value = searchTerm;
+    if (navInput) navInput.value = searchTerm;
+    const grid = document.getElementById('productGrid');
+    if (grid) grid.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// ==================
+// RUN ON PAGE LOAD
+// ==================
+document.addEventListener('DOMContentLoaded', loadProduct);
+document.addEventListener('DOMContentLoaded', loadCart);
+document.addEventListener('DOMContentLoaded', loadShippingPage);
+document.addEventListener('DOMContentLoaded', loadPaymentPage);
+document.addEventListener('DOMContentLoaded', updateCartBadge);
+document.addEventListener('DOMContentLoaded', initSearch);
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.getElementById('shopProductGrid')) {
+    const params = new URLSearchParams(window.location.search);
+    const searchTerm = params.get('search');
+    if (searchTerm) {
+      renderShopProducts('search', searchTerm);
+      const heroInput = document.getElementById('shopHeroSearchInput');
+      if (heroInput) heroInput.value = searchTerm;
+    } else {
+      renderShopProducts('featured');
+    }
+  }
+});
